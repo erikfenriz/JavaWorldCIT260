@@ -13,6 +13,7 @@ import java.util.Objects;
  */
 public class Menu implements Serializable{
     private String menu;
+    private Map worldMap;
 
     public Menu() {
     }
@@ -25,15 +26,24 @@ public class Menu implements Serializable{
         this.menu = menu;
     }
 
+    public Map getWorldMap() {
+        return worldMap;
+    }
+
+    public void setWorldMap(Map worldMap) {
+        this.worldMap = worldMap;
+    }
+
     @Override
     public String toString() {
-        return "Menu{" + "menu=" + menu + '}';
+        return "Menu{" + "menu=" + menu + ", worldMap=" + worldMap + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.menu);
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.menu);
+        hash = 79 * hash + Objects.hashCode(this.worldMap);
         return hash;
     }
 
@@ -52,8 +62,13 @@ public class Menu implements Serializable{
         if (!Objects.equals(this.menu, other.menu)) {
             return false;
         }
+        if (!Objects.equals(this.worldMap, other.worldMap)) {
+            return false;
+        }
         return true;
     }
+
+
     
     
     

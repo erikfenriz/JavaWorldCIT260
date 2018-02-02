@@ -16,6 +16,7 @@ public class Item implements Serializable{
     private int quantityOfItem;
     private boolean canBePurchased;
 
+    
     public Item() {
     }
 
