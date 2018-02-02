@@ -5,18 +5,16 @@
  */
 package byui.cit260.thegame.model;
 
-
-import java.io.Serializable;
-import java.util.Objects;
 import java.util.ArrayList;
-
 
 /**
  *
  * @author Erik Rybalkin
  */
-public class Event implements Serializable{
+public enum Event {
 
+    
+    Start("Game Launch Sequence", "Scenario", false, 0);
   
     private String eventName;
     private String eventType;
@@ -24,17 +22,12 @@ public class Event implements Serializable{
     private int rewardReceived;
     private ArrayList<Item> items = new ArrayList<Item>();
     
-        public Event() {
+        Event(String eventName,String eventType,boolean completed,int rewardReceived) {
+        this.eventName = eventName;
+        this.eventType = eventType;
+        this.completed = completed;
+        this.rewardReceived = rewardReceived;
     }
-
-    public ArrayList<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
-    }
-        
 
     public String getEventName() {
         return eventName;
@@ -68,48 +61,19 @@ public class Event implements Serializable{
         this.rewardReceived = rewardReceived;
     }
 
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
     @Override
     public String toString() {
-        return "Event{" + "eventName=" + eventName + ", eventType=" + eventType + ", completed=" + completed + ", rewardReceived=" + rewardReceived + '}';
+        return "Event{" + "eventName=" + eventName + ", eventType=" + eventType + ", completed=" + completed + ", rewardReceived=" + rewardReceived + ", items=" + items + '}';
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.eventName);
-        hash = 47 * hash + Objects.hashCode(this.eventType);
-        hash = 47 * hash + (this.completed ? 1 : 0);
-        hash = 47 * hash + this.rewardReceived;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Event other = (Event) obj;
-        if (this.completed != other.completed) {
-            return false;
-        }
-        if (this.rewardReceived != other.rewardReceived) {
-            return false;
-        }
-        if (!Objects.equals(this.eventName, other.eventName)) {
-            return false;
-        }
-        if (!Objects.equals(this.eventType, other.eventType)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
+        
+        
         
 }

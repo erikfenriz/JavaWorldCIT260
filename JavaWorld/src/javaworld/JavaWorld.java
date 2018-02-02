@@ -6,6 +6,7 @@
 package javaworld;
 
 import byui.cit260.thegame.model.Actor;
+import byui.cit260.thegame.model.Event;
 import byui.cit260.thegame.model.Item;
 import byui.cit260.thegame.model.Location;
 import byui.cit260.thegame.model.Map;
@@ -81,6 +82,13 @@ public class JavaWorld {
         Location.LogicGate.getRequirements();
         Location.LogicGate.isVisited();
         System.out.println(Location.LogicGate.toString());
+        
+        
+        Event.Start.getEventName();
+        Event.Start.getEventType();
+        Event.Start.isCompleted();
+        Event.Start.getRewardReceived();
+        System.out.println(Event.Start.toString());
         
     }
     
