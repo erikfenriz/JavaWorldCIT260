@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Objects;
 /**
  *
- * @author Erik Rybalkin
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
 public class Menu implements Serializable{
     private String menu;

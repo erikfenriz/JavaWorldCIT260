@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Erik Ryblakin
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
 public class Event implements Serializable{
 
