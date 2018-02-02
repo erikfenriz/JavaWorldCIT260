@@ -8,7 +8,7 @@ package byui.cit260.thegame.model;
 import java.io.Serializable;
 /**
  *
- * @author Erik Rybalkin & Rayshorn Richardson
+ * @author Erik Rybalkin
  */
 public class Item implements Serializable{
     private int itemID;
