@@ -6,6 +6,7 @@
 package byui.cit260.thegame.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 /**
  *
  * @author Erik Rybalkin
@@ -27,6 +28,31 @@ public class Menu implements Serializable{
     @Override
     public String toString() {
         return "Menu{" + "menu=" + menu + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.menu);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Menu other = (Menu) obj;
+        if (!Objects.equals(this.menu, other.menu)) {
+            return false;
+        }
+        return true;
     }
     
     
