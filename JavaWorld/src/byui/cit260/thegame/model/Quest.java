@@ -4,89 +4,65 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.model;
-import java.io.Serializable;
 import java.awt.Point;
-import java.util.Objects;
-import java.util.ArrayList;
+import java.io.Serializable;
 /**
  *
- * @author Rayshorn Richardson
+ * @author Erik Rybalkin
  */
-public class Quest implements Serializable{
+public enum Quest {
     
-    private boolean reward;
-    private Point coordinate;
-    private ArrayList<Actor> actors = new ArrayList<Actor>();
-    private ArrayList<QuizAndPuzzle> quizzes = new ArrayList<QuizAndPuzzle>();
+    Quiz01("Quiz of Java souls", "Crack this quiz and you will step on a track of Java developer!", 400, new Point(1,4));
+ 
     
+    private String name;
+    private String description;
+    private int reward;
+    private Point coordinates;
+    
+    Quest(String name, String description, int reward, Point coordinates){
+this.name = name;
+this.description = description;
+this.reward = reward;
+this.coordinates = coordinates;
+}
 
-    public Quest() {
+    public String getName() {
+        return name;
     }
 
-    public ArrayList<Actor> getActors() {
-        return actors;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setActors(ArrayList<Actor> actors) {
-        this.actors = actors;
+    public String getDescription() {
+        return description;
     }
 
-    public ArrayList<QuizAndPuzzle> getQuizzes() {
-        return quizzes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setQuizzes(ArrayList<QuizAndPuzzle> quizzes) {
-        this.quizzes = quizzes;
-    }
-
-    public boolean isReward() {
+    public int getReward() {
         return reward;
     }
 
-    public void setReward(boolean reward) {
+    public void setReward(int reward) {
         this.reward = reward;
     }
 
-    public Point getCoordinate() {
-        return coordinate;
+    public Point getCoordinates() {
+        return coordinates;
     }
 
-    public void setCoordinate(Point coordinate) {
-        this.coordinate = coordinate;
-    }
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + (this.reward ? 1 : 0);
-        hash = 41 * hash + Objects.hashCode(this.coordinate);
-        return hash;
     }
 
     @Override
     public String toString() {
-        return "Quest{" + "reward=" + reward + ", coordinate=" + coordinate + '}';
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Quest other = (Quest) obj;
-        if (this.reward != other.reward) {
-            return false;
-        }
-        if (!Objects.equals(this.coordinate, other.coordinate)) {
-            return false;
-        }
-        return true;
+        return "Quest{" + "name=" + name + ", description=" + description + ", reward=" + reward + ", coordinates=" + coordinates + '}';
     }
     
     
