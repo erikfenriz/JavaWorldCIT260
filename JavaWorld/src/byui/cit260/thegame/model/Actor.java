@@ -5,6 +5,7 @@
  */
 package byui.cit260.thegame.model;
 import java.awt.Point;
+import java.util.ArrayList;
 /**
  *
  * @author Erik Rybalkin & Rayshorn Richardson
@@ -23,12 +24,21 @@ public enum Actor {
   private String name;
   private String description;
   private Point coordinates;
+  private ArrayList<Quest> quests = new ArrayList<Quest>();
 
     Actor(String name, String description, Point coordinates){
 this.name = name;
 this.description = description;
 this.coordinates = coordinates;
 }
+
+    public ArrayList<Quest> getQuests() {
+        return quests;
+    }
+
+    public void setQuests(ArrayList<Quest> quests) {
+        this.quests = quests;
+    }
 
     public String getName() {
         return name;

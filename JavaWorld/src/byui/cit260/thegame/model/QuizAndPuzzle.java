@@ -6,6 +6,7 @@
 package byui.cit260.thegame.model;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.ArrayList;
 /**
  *
  * @author Rayshorn Richardson
@@ -15,8 +16,17 @@ public class QuizAndPuzzle implements Serializable{
     private String question;
     private String answer;
     private boolean reward;
+    private ArrayList<Quest> quests = new ArrayList<Quest>();
 
     public QuizAndPuzzle() {
+    }
+
+    public ArrayList<Quest> getQuests() {
+        return quests;
+    }
+
+    public void setQuests(ArrayList<Quest> quests) {
+        this.quests = quests;
     }
 
     public String getQuestion() {

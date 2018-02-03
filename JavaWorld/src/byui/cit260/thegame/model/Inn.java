@@ -14,9 +14,19 @@ public class Inn implements Serializable{
     private boolean save;
     private boolean load;
     private boolean rest;
+    private Location locations;
 
     public Inn() {
     }
+
+    public Location getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location locations) {
+        this.locations = locations;
+    }
+
 
     public boolean isSave() {
         return save;

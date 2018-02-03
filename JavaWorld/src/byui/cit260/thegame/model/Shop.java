@@ -5,6 +5,7 @@
  */
 package byui.cit260.thegame.model;
 import java.io.Serializable;
+import java.util.ArrayList;
 /**
  *
  * @author Rayshorn Richardson
@@ -13,10 +14,27 @@ public class Shop implements Serializable{
     
     private boolean buy;
     private boolean sell;
+    private Location locations;
+    private ArrayList<Item> items = new ArrayList<Item>();
 
     public Shop() {
     }
 
+    public Location getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location locations) {
+        this.locations = locations;
+    }
+    
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
     public boolean isBuy() {
         return buy;
     }
@@ -66,6 +84,5 @@ public class Shop implements Serializable{
         }
         return true;
     }
-    
     
 }

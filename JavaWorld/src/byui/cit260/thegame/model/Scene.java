@@ -4,27 +4,25 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.model;
-
+import java.util.ArrayList;
 /**
  *
  * @author Rayshorn Richardson
  */
 public enum Scene{
     
-    LogicGate("City"),
-    MathPit("Town"),
-    VariableVille("Village"),
-    CompilerPass("City"),
-    ArrayCity("City"),
-    BytecodeSea("Ocean"),
-    ClassyTown("Town"),
-    FileSwamp("Swamp"),
-    FunctionForest("Forest"),
-    StaticVolcano("Mountain"),
-    PublicMine("Mine");
+    CityArea("City"),
+    TownArea("Town"),
+    VillageArea("Village"),
+    OceanArea("Ocean"),
+    SwampArea("Swamp"),
+    ForestArea("Forest"),
+    MountainArea("Mountain"),
+    MineArea("Mine");
     
     private String type;
     private Event event;
+    private ArrayList<Location> locations = new ArrayList<Location>();
 
     public Event getEvent() {
         return event;
