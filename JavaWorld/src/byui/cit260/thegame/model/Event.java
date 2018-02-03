@@ -23,8 +23,17 @@ public class Event implements Serializable{
     private boolean completed;
     private int rewardReceived;
     private ArrayList<Item> items = new ArrayList<Item>();
+    private Scene scene;
     
         public Event() {
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
 
     public ArrayList<Item> getItems() {
