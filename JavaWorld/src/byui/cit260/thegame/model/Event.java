@@ -22,11 +22,24 @@ public enum Event {
     private int rewardReceived;
     private ArrayList<Item> items = new ArrayList<Item>();
     
+
+    
+        public Event() {
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+
         Event(String eventName,String eventType,boolean completed,int rewardReceived) {
         this.eventName = eventName;
         this.eventType = eventType;
         this.completed = completed;
         this.rewardReceived = rewardReceived;
+
     }
 
     public String getEventName() {

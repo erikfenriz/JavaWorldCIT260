@@ -57,6 +57,7 @@ this.coordinates = coordinates;
 
     public void setCoordinates(Point coordinates) {
         this.coordinates = coordinates;
+
     }
 
     @Override

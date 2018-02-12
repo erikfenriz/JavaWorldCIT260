@@ -5,8 +5,6 @@
  */
 package byui.cit260.thegame.model;
 
-
-
 /**
  *
  * @author Erik Rybalkin
@@ -68,10 +66,9 @@ this.visited = visited;
         this.visited = visited;
     }
 
-    @Override
+    @Override  
     public String toString() {
         return "Location{" + "name=" + name + ", row=" + row + ", col=" + col + ", requirements=" + requirements + ", visited=" + visited + '}';
     }
-
 
 }

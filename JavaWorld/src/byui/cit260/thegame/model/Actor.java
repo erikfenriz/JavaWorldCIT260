@@ -32,6 +32,14 @@ this.description = description;
 this.coordinates = coordinates;
 }
 
+    public ArrayList<Quest> getQuests() {
+        return quests;
+    }
+
+    public void setQuests(ArrayList<Quest> quests) {
+        this.quests = quests;
+    }
+
     public String getName() {
         return name;
     }

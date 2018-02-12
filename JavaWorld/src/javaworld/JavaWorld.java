@@ -6,6 +6,9 @@
 package javaworld;
 
 import byui.cit260.thegame.model.Actor;
+import byui.cit260.thegame.model.Inn;
+import byui.cit260.thegame.model.QuizAndPuzzle;
+import byui.cit260.thegame.model.Shop;
 import byui.cit260.thegame.model.Event;
 import byui.cit260.thegame.model.Item;
 import byui.cit260.thegame.model.Location;
@@ -35,7 +38,30 @@ public class JavaWorld {
         Actor.Father.getName();
         Actor.Father.getDescription();
         System.out.println(Actor.Father.toString());
+       
+        QuizAndPuzzle quiz = new QuizAndPuzzle();
         
+        quiz.setQuestion("What is does 'System.out.println' does?");
+        quiz.setAnswer("It prints the result to the console");
+        quiz.setReward(true);
+        
+        System.out.println(quiz.toString());
+        
+        Inn inns = new Inn();
+        
+        inns.setSave(true);
+        inns.setLoad(false);
+        inns.setRest(true);
+        
+        System.out.println(inns.toString());
+        
+        Shop shops = new Shop();
+        
+        shops.setBuy(true);
+        shops.setSell(false);
+        
+        System.out.println(shops.toString());
+
         Quest.Quiz01.getName();
         Quest.Quiz01.getDescription();
         Quest.Quiz01.getReward();
@@ -89,7 +115,7 @@ public class JavaWorld {
         Event.Start.isCompleted();
         Event.Start.getRewardReceived();
         System.out.println(Event.Start.toString());
-        
+
     }
     
 }
