@@ -9,7 +9,6 @@ import byui.cit260.thegame.model.Actor;
 import byui.cit260.thegame.model.Inn;
 import byui.cit260.thegame.model.QuizAndPuzzle;
 import byui.cit260.thegame.model.Shop;
-import byui.cit260.thegame.model.Event;
 import byui.cit260.thegame.model.Item;
 import byui.cit260.thegame.model.Location;
 import byui.cit260.thegame.model.Map;
@@ -110,7 +109,6 @@ public class JavaWorld {
         System.out.println(Location.LogicGate.toString());
         
    
-
     }
     
 }
