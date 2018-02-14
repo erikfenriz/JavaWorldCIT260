@@ -33,10 +33,31 @@ public class InnControllerTest {
     @Test
     public void testIncreaseHunger() {
         System.out.println("increaseHunger");
-        double stats = 0.0;
-        double maxHunger = 0.0;
-        double expResult = 0.0;
+        System.out.println("Test 1");
+        double stats = 50.0;
+        double maxHunger = 300;
+        double expResult = 250.0;
         double result = InnController.increaseHunger(stats, maxHunger);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+        
+        System.out.println("increaseHunger");
+        System.out.println("Test 2");
+        stats = 80.0;
+        maxHunger = 300;
+        expResult = 220.0;
+        result = InnController.increaseHunger(stats, maxHunger);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+        
+        System.out.println("increaseHunger");
+        System.out.println("Test 3");
+        stats = 80.0;
+        maxHunger = 300;
+        expResult = 220.0;
+        result = InnController.increaseHunger(stats, maxHunger);
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
