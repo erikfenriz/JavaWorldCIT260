@@ -10,5 +10,15 @@ package byui.cit260.thegame.control;
  * @author user
  */
 public class InnController {
+    public int stats = 50;
+    public int maxHunger = 300;
     
+    public static int increaseHunger(int stats, int maxHunger){
+        if(stats <= maxHunger){
+            int stat = maxHunger;
+            return stat;
+        }
+        else
+            return stats;
+    }
 }
