@@ -109,12 +109,7 @@ public class JavaWorld {
         Location.LogicGate.isVisited();
         System.out.println(Location.LogicGate.toString());
         
-        
-        Event.Start.getEventName();
-        Event.Start.getEventType();
-        Event.Start.isCompleted();
-        Event.Start.getRewardReceived();
-        System.out.println(Event.Start.toString());
+   
 
     }
     
