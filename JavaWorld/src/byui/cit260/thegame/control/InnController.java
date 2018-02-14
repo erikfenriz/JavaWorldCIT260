@@ -7,18 +7,25 @@ package byui.cit260.thegame.control;
 
 /**
  *
- * @author user
+ * @author Rayshorn Richardson
  */
 public class InnController {
-    public int stats = 50;
-    public int maxHunger = 300;
+    public double stats = 50.50;
+    public double maxHunger = 300;
     
-    public static int increaseHunger(int stats, int maxHunger){
-        if(stats <= maxHunger){
-            int stat = maxHunger;
-            return stat;
+    public static double increaseHunger(double stats, double maxHunger){
+        double innPoints;
+        double stat = stats;
+        if(stats < maxHunger && !(stats > maxHunger)){
+            innPoints = maxHunger - stats;
+            return innPoints;
+        }
+        else if(stats < 0){
+            Math.abs(stats);
+            innPoints = maxHunger - stats;
+            return innPoints;
         }
         else
-            return stats;
+            return stat;
     }
 }
