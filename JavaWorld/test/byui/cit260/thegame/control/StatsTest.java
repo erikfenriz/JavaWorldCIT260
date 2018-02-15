@@ -75,7 +75,7 @@ public class StatsTest {
         expResult = 46.5;
         result = Stats.increaseMood(position, item, mood);
         System.out.println("increaseMood");
-        System.out.println("\t Test 4 " + result);
+        System.out.println("\t Test 6 " + result);
         assertEquals(expResult, result, 0.0001);
         
         position = 10.0;
@@ -84,7 +84,7 @@ public class StatsTest {
         expResult = 100.0;
         result = Stats.increaseMood(position, item, mood);
         System.out.println("increaseMood");
-        System.out.println("\t Test 5 " + result);
+        System.out.println("\t Test 7 " + result);
         assertEquals(expResult, result, 0.0001);
         
         position = 90.0;
@@ -93,7 +93,7 @@ public class StatsTest {
         expResult = 100.0;
         result = Stats.increaseMood(position, item, mood);
         System.out.println("increaseMood");
-        System.out.println("\t Test 6 " + result);
+        System.out.println("\t Test 8 " + result);
         assertEquals(expResult, result, 0.0001);
         
         position = -40.0;
@@ -102,17 +102,26 @@ public class StatsTest {
         expResult = 0.0;
         result = Stats.increaseMood(position, item, mood);
         System.out.println("increaseMood");
-        System.out.println("\t Test 7 " + result);
+        System.out.println("\t Test 9 " + result);
         assertEquals(expResult, result, 0.0001);
 
-        position = -40.0;
+        position = -50.0;
         item = 1.0;
         mood = 5.0;
         expResult = 0.0;
         result = Stats.increaseMood(position, item, mood);
         System.out.println("increaseMood");
-        System.out.println("\t Test 7 " + result);
-        assertEquals(expResult, result, 0.0001);         
+        System.out.println("\t Test 10 " + result);
+        assertEquals(expResult, result, 0.0001);   
+        
+        position = 100;
+        item = 20.0;
+        mood = 100.0;
+        expResult = 100.0;
+        result = Stats.increaseMood(position, item, mood);
+        System.out.println("increaseMood");
+        System.out.println("\t Test 11 " + result);
+        assertEquals(expResult, result, 0.0001); 
         
     }
     

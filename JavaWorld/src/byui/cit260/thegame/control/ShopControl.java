@@ -41,7 +41,7 @@ public class ShopControl {
         discount = price * 0.95;
         return Math.round(discount);
     }else
-          return 000;
+          return price;
     
         }
 }

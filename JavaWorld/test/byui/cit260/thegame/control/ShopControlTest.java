@@ -86,13 +86,33 @@ public class ShopControlTest {
         System.out.println("\t Test 7 " + result);
         assertEquals(expResult, result, 0.0001);
         
-        mood = 100;
-        day = 6;
+        mood = 105;
+        day = 10;
         price = 400.0;
-        expResult = 340.0;
+        expResult = 400.0;
         result = ShopControl.calcShopDiscount(mood, day, price);
         System.out.println("calcShopDiscount");
         System.out.println("\t Test 8 " + result);
         assertEquals(expResult, result, 0.0001);
+        
+        mood = -23;
+        day = 7;
+        price = 400.0;
+        expResult = 400.0;
+        result = ShopControl.calcShopDiscount(mood, day, price);
+        System.out.println("calcShopDiscount");
+        System.out.println("\t Test 9 " + result);
+        assertEquals(expResult, result, 0.0001);
+        
+        mood = 0;
+        day = 5;
+        price = 400.0;
+        expResult = 400.0;
+        result = ShopControl.calcShopDiscount(mood, day, price);
+        System.out.println("calcShopDiscount");
+        System.out.println("\t Test 10 " + result);
+        assertEquals(expResult, result, 0.0001);
+        
+        
     }
 }
