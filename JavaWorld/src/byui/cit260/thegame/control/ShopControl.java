@@ -21,15 +21,19 @@ public class ShopControl {
     if((day <= 4 && day >= 0) && (mood >= 90 && mood <= 100)){
     discount = price * 0.9; 
     return Math.round(discount);
+    //if the day is 0 to 4 and mood more than 90 and less than 100 THEN price -10%
         }else if ((day <= 4 && day >= 0) && (mood >= 40 && mood <= 89)){
         discount = price;
         return discount;
+    //if the day is 0 to 4 and mood more than 40 and less than 89 THEN price is same
     }else if ((day <= 4 && day >= 0) && (mood >= 1 && mood <= 39)){
         discount = price * 1.1;
         return Math.round(discount);
+    //if the day is 0 to 4 and mood more than 1 and less than 39 THEN price +10%
     }else if ((day == 5 || day == 6) && (mood >= 90 && mood <= 100)){
         discount = price * 0.85;
         return Math.round(discount);
+    //if the day is 0 to 4 and mood more than 90 and less than 100 THEN price -10%
     }else if ((day == 5 || day == 6) &&  (mood >= 40 && mood <= 89)){
         discount = price * 0.85;
         return Math.round(discount);
@@ -37,7 +41,7 @@ public class ShopControl {
         discount = price * 0.95;
         return Math.round(discount);
     }else
-          return 000;
+          return price;
     
         }
 }
