@@ -7,6 +7,7 @@ package byui.cit260.thegame.control;
 
 /**
  *
+=======
  * @author Erik Rybalkin
  */
 public class Stats {
