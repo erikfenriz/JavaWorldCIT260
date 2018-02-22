@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author user
+ * @author Erik Rybalkin
  */
 public class StatsTest {
     
