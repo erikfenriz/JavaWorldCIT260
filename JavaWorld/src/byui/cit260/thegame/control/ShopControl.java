@@ -7,7 +7,7 @@ package byui.cit260.thegame.control;
 
 /**
  *
- * @author user
+ * @author Erik Rybalkin and Rayshorn Richardson
  */
 public class ShopControl {
     public int day = 4;
