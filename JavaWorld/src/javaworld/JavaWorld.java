@@ -5,7 +5,10 @@
  */
 package javaworld;
 
-import byui.cit260.thegame.model.Actor;
+import byui.cit260.thegame.view.StartProgramView;
+import byui.cit260.thegame.model.Player;
+import byui.cit260.thegame.model.Game;
+/*import byui.cit260.thegame.model.Actor;
 import byui.cit260.thegame.model.Inn;
 import byui.cit260.thegame.model.QuizAndPuzzle;
 import byui.cit260.thegame.model.Shop;
@@ -13,19 +16,26 @@ import byui.cit260.thegame.model.Item;
 import byui.cit260.thegame.model.Location;
 import byui.cit260.thegame.model.Map;
 import byui.cit260.thegame.model.Menu;
-import byui.cit260.thegame.model.Player;
-import byui.cit260.thegame.model.Quest;
+import byui.cit260.thegame.model.Quest;*/
 
 /**
  *
  * @author Erik Rybalkin & Rayshorn Richardson
  */
 public class JavaWorld {
-
+private static Game currentGame = null;
+private static Player currentPlayer = null;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+        
+        
+        /*
+        
         Player playerOne = new Player();
         
         playerOne.setName("Fred Flintstone");
@@ -37,7 +47,7 @@ public class JavaWorld {
         Actor.Father.getName();
         Actor.Father.getDescription();
         System.out.println(Actor.Father.toString());
-       
+        
         QuizAndPuzzle quiz = new QuizAndPuzzle();
         
         quiz.setQuestion("What is does 'System.out.println' does?");
@@ -60,7 +70,7 @@ public class JavaWorld {
         shops.setSell(false);
         
         System.out.println(shops.toString());
-
+        
         Quest.Quiz01.getName();
         Quest.Quiz01.getDescription();
         Quest.Quiz01.getReward();
@@ -108,7 +118,23 @@ public class JavaWorld {
         Location.LogicGate.isVisited();
         System.out.println(Location.LogicGate.toString());
         
-   
+        */
     }
+  public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        JavaWorld.currentGame = currentGame;
+    }
+
+    public static Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public static void setCurrentPlayer(Player currentPlayer) {
+        JavaWorld.currentPlayer = currentPlayer;
+    }
+  
     
 }

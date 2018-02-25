@@ -5,10 +5,26 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.model.Player;
+import javaworld.JavaWorld;
+
 /**
  *
  * @author user
  */
 public class GameControl {
-    
+
+    public static Player savePlayer(String name) {
+        if(name == null || name.length() < 1 || name.length() == 0){
+            return null;
+        }
+        Player player = new Player();
+        player.setName(name);
+        JavaWorld.setCurrentPlayer(player);
+        return player;
+    }
+    public static void createNewGame(Player player) {
+        String name = player.getName();
+        System.out.println(name + "!!!");
+    }
 }
