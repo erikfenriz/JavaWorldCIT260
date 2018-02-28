@@ -9,9 +9,12 @@ package byui.cit260.thegame.view;
  *
  * @author Erik Rybalkin
  */
-class StartExisitingGameView {
+public class CustomsView {
 
-    public void displayStartExisitingGameView() {
-        System.out.println("**method startExisitingGameView() called**");
+    static void CustomsViewDisplay() {
+        System.out.println("**Welcome to Java World's customs**");
+        System.out.println("**Prepare your appearance for inspection**");
+        
     }
+    
 }
