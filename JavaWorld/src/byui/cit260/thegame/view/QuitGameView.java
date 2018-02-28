@@ -25,7 +25,6 @@ public class QuitGameView {
             break;
         default:
             System.out.println("Invalid choice");
-            
         }    
     }
 }

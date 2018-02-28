@@ -9,22 +9,20 @@ import java.util.Scanner;
 
 /**
  *
- * @author user
+ * @author Erik Rybalkin
  */
-class ControlsHelpMenuView {
+class EarlyStatusView {
 
-    static void displayControlsHelpMenuView() {
-         System.out.println("To progress through the game, use the keys that are\n"
-                + "prompted by the game.\n" 
-                + "The game is expecting the commands as numbers – 1,2,3,4,5,etc.\n"
-                + "In some cases, the commands that the game expects are “yes”\n"
-                + "and “no” for closed-ended questions.\n"
-                + "Some screens wouldn’t prompt an input.\n"
-                + "These screens are skippable with Space button");
-            System.out.println("********************************************************");
-            System.out.println("Q - go back");
-            
-        boolean endOfView;
+    public static void earlyStatusViewDisplay() {
+        System.out.println("Hunger: 30/100\n" +
+"Tiredness: 20/100\n" +
+"Mood: 60/100\n" +
+"I have been traveling for so long to get to this place…\n"
+                + " better be using ‘S’ button to check the status next time…");
+        System.out.println(" ");
+        System.out.println("1. Inventory");
+        System.out.println("2. Look through the window");
+          boolean endOfView;
         endOfView = false;
         do{
             String[] inputs = getInputs();
@@ -32,12 +30,12 @@ class ControlsHelpMenuView {
               if(inputs.length == 0 || inputs.length < 1){
                 continue;
             }
-        }while(!endOfView);
-
+        }while(!endOfView);        
     }
+    
 
-     private static String[] getInputs() {
-          String[] inputs = new String[1];
+    private static String[] getInputs() {
+  String[] inputs = new String[1];
         System.out.println("Make a selection");
         String choice;
        
@@ -48,23 +46,26 @@ class ControlsHelpMenuView {
         choice = s.nextLine().trim();
         if(choice.length() < 1 || choice.length() == 0){
             System.out.println("**You need to enter a non-blank value**"); 
-            displayControlsHelpMenuView();
+            earlyStatusViewDisplay();
         }
         inputs[0] = choice;
         valid = true;
         }
-        return inputs;
-    }
+        return inputs;    }
 
     private static boolean doAction(String[] inputs) {
-        char choice = Character.toUpperCase(inputs[0].charAt(0));
+char choice = Character.toUpperCase(inputs[0].charAt(0));
         switch(choice){
-            case 'Q':
-                HelpMenuView.displayHelpMenuView();
+            case '1':
+                InventoryAfterStatusView.inventoryAfterStatusViewDisplay();
                 break;
+            case '2':                                
+                LookThroughTheWindowAfterStatus.lookThroughTheWindowAfterStatusDisplay();
+            break;
             default: System.out.println("Invalid Choice");
             break;
         }
         return false;
     }
+
 }

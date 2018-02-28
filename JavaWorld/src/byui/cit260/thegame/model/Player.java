@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Player implements Serializable {
     private String name;
     private double bestTime;
+    private double mood;
     //private ArrayList<Game> games = new ArrayList<Game>();
 
     public Player() {
@@ -82,7 +83,17 @@ public class Player implements Serializable {
         }
         return true;
     }
+
+//    public void setMood(double mood) {
+//        this.mood = mood;
+//    }
+//    
+//    
+//    public double getMood() {
+//        return mood;
+    }
+
     
     
     
-}
+
