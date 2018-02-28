@@ -8,6 +8,7 @@ package javaworld;
 import byui.cit260.thegame.view.StartProgramView;
 import byui.cit260.thegame.model.Player;
 import byui.cit260.thegame.model.Game;
+import byui.cit260.thegame.view.ShopMenuView;
 /*import byui.cit260.thegame.model.Actor;
 import byui.cit260.thegame.model.Inn;
 import byui.cit260.thegame.model.QuizAndPuzzle;
@@ -23,8 +24,8 @@ import byui.cit260.thegame.model.Quest;*/
  * @author Erik Rybalkin & Rayshorn Richardson
  */
 public class JavaWorld {
-private static Game currentGame = null;
-private static Player currentPlayer = null;
+    private static Game currentGame = null;
+    private static Player currentPlayer = null;
     /**
      * @param args the command line arguments
      */
@@ -32,8 +33,8 @@ private static Player currentPlayer = null;
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
-        
-        
+        ShopMenuView shopMenuView = new ShopMenuView();
+        ShopMenuView.displayShopMenuView();
         /*
         
         Player playerOne = new Player();
@@ -120,20 +121,20 @@ private static Player currentPlayer = null;
         
         */
     }
-  public static Game getCurrentGame() {
-        return currentGame;
+     public static Game getCurrentGame() {
+    return currentGame;
     }
-
+    
     public static void setCurrentGame(Game currentGame) {
-        JavaWorld.currentGame = currentGame;
+    JavaWorld.currentGame = currentGame;
     }
-
+    
     public static Player getCurrentPlayer() {
-        return currentPlayer;
+    return currentPlayer;
     }
-
+    
     public static void setCurrentPlayer(Player currentPlayer) {
-        JavaWorld.currentPlayer = currentPlayer;
+    JavaWorld.currentPlayer = currentPlayer;
     }
   
     
