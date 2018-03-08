@@ -21,7 +21,8 @@ public class QuitGameView {
         case "Y":
             Runtime.getRuntime().exit(0);
         case "N":
-            MainMenuView.displayMainMenuView();
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.display();
             break;
         default:
             System.out.println("Invalid choice");

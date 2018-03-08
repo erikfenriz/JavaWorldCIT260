@@ -52,7 +52,7 @@ public class StatusAfterInventoryView {
         return inputs;    }
 
     private static boolean doAction(String[] inputs) {
-char choice = Character.toUpperCase(inputs[0].charAt(0));
+        char choice = Character.toUpperCase(inputs[0].charAt(0));
         switch(choice){
             case '1':                                
                 AfterStatusAndInventory.AfterStatusAndInventoryDisplay();

@@ -11,20 +11,28 @@ import java.util.Scanner;
  *
  * @author Erik Rybalkin
  */
-class GameMenuView {
+public class GameMenuView{
+    
+    
+    
     public static void displayGameMenuView(){
+        
         System.out.println("Are you ready? Y/N");
+        
         String choice;
         Scanner s = new Scanner(System.in);
-    choice = s.nextLine().trim().toUpperCase();
-    switch(choice){
+        choice = s.nextLine().trim().toUpperCase();
+        
+        switch(choice){
         case "Y":
             Episode1Scene1View.Episode1Scene1ViewDisplay();
         case "N":
-            MainMenuView.displayMainMenuView();
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.display();
             break;
         default:
             System.out.println("Invalid choice");
         }
     }
+
 }
