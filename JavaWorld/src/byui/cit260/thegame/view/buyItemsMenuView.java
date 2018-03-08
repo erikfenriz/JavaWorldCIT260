@@ -9,51 +9,21 @@ import java.util.Scanner;
  *
  * @author Rayshorn Richardson
  */
-public class buyItemsMenuView {
+public class buyItemsMenuView extends View{
     
-    public static void displayBuyItemsMenuView(){
-        System.out.println("This is the menu!\n" 
-                +"F - Food\n" + "M - Microchip\n" + "Q - Quit");
-        
-        boolean buy = false;
-        
-        do{
-            String[] inputs = getInputs();
-            
-            if(inputs.length == 0){
-                continue;
-            }else if(inputs[0].toUpperCase().equals('Q')){
-                return;
-            }
-            buy = doActions(inputs);
-        }while(buy != true);
-    }
+    public buyItemsMenuView() {
 
-    private static String[] getInputs() {
-        System.out.println("this works");
+        super("This is the menu!\n" 
+                +"F - Food\n" + "M - Microchip\n" + "Q - Quit"
+        );
         
-        String[] inputs = new String[1];
-        boolean items = false;
-        while(items == false){
-            System.out.println("");
-            Scanner enter;
-            enter = new Scanner(System.in);
-            
-            String picker = enter.nextLine().trim();
-            if(picker.length() == 0 || picker.length() < 1){
-                System.out.println("Please pick from our options");
-                displayBuyItemsMenuView();
-            }
-            inputs[0] = picker;
-            items = true;
-        }
-        return inputs;
     }
-
-    private static boolean doActions(String[] inputs) {
-        char options = Character.toUpperCase(inputs[0].charAt(0));
+    
+    
+    public boolean doActions(String value) {
+        char choice = Character.toUpperCase(value.charAt(0));
         
-        switch(options){
+        switch(choice){
             case 'F':
                 System.out.println("You have bought some Food");
                 break;
@@ -62,12 +32,18 @@ public class buyItemsMenuView {
                 break;
             case 'Q':
                 System.out.println("Exiting Buy Menu");
-            ShopMenuView.displayShopMenuView();
+                ShopMenuView shopMenuView = new ShopMenuView();
+            shopMenuView.display();
                 break;
             default:
                 System.out.println("Invalid Choice");
                 break;
         }
         return false;
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -17,7 +17,8 @@ public class FirstArrivalView {
         System.out.println("You have arrived. Welcome to Java World.\n" +
                       "1.Exit train and try to find help\n" +
                       "2.Exit train and find the Guru\n" +
-                      "3.Check the Map");
+                      "3.Check the Map\n"
+                        + "4. Visit Store");
                   boolean endOfView;
         endOfView = false;
         do{
@@ -58,6 +59,9 @@ char choice = Character.toUpperCase(inputs[0].charAt(0));
                System.out.println("method called"); 
            }else if(choice == '3'){
                System.out.println("method called");
+           }else if(choice == '4'){
+               ShopMenuView shopMenuView = new ShopMenuView();
+               shopMenuView.display();
            }else{
                System.out.println("Invalid Choice");
         }

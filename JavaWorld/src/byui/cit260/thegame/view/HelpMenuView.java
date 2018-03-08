@@ -9,55 +9,31 @@ import java.util.Scanner;
  *
  * @author user
  */
-public class HelpMenuView {
+public class HelpMenuView extends View{
 
-    static void displayHelpMenuView() {
-         System.out.println("P - Game's purpose\n" +
+    public HelpMenuView() {
+
+        super("P - Game's purpose\n" +
                             "C - Game's controls\n" +
-                            "Q - Exit");
-      
-            boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            endOfView = doAction(inputs);
-              if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }
-        }while(!endOfView);
+                            "Q - Exit"
+        );
+        
     }
-
-    private static String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println("Make a selection");
-        String choice;
-       
-        boolean valid = false;
-       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        choice = s.nextLine().trim();
-        if(choice.length() < 1 || choice.length() == 0){
-            System.out.println("**You need to enter a non-blank value**"); 
-            displayHelpMenuView();
-        }
-        inputs[0] = choice;
-        valid = true;
-        }
-        return inputs;
-    }
-
-    private static boolean doAction(String[] inputs) {
-        char choice = Character.toUpperCase(inputs[0].charAt(0));
+    
+    public boolean doAction(String value) {
+        char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case 'P':
-                PurposeHelpMenuView.displayPurposeHelpMenuView();
+                PurposeHelpMenuView purposeHelpMenuView = new PurposeHelpMenuView();
+                purposeHelpMenuView.display();
                 break;
-            case 'C':                
-                ControlsHelpMenuView.displayControlsHelpMenuView();
+            case 'C':     
+                ControlsHelpMenuView controlsHelpMenuView = new ControlsHelpMenuView();
+                controlsHelpMenuView.display();
             break;
             case 'Q':
-            MainMenuView.displayMainMenuView();
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.display();
             break;
             default: System.out.println("Invalid Choice");
             break;

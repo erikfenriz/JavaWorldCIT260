@@ -48,7 +48,7 @@ public class LookThroughTheWindowAfterStatus {
         inputs[0] = choice;
         valid = true;
         }
-        return inputs;      
+        return inputs;
     }
 
     private static boolean doAction(String[] inputs) {

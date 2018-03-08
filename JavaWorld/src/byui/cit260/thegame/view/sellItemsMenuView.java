@@ -11,50 +11,21 @@ import java.util.Scanner;
  *
  * @author Rayshorn Richardson
  */
-public class sellItemsMenuView {
+public class sellItemsMenuView extends View{
     
-    public static void displaySellItemsMenuView(){
-        System.out.println("This is the menu!\n" 
-                +"F - Food\n" + "M - Microchip\n" + "Q - Quit");
-        boolean sell = false;
-        
-        do{
-            String[] inputs = getInputs();
-            
-            if(inputs.length == 0){
-                continue;
-            }else if(inputs[0].toUpperCase().equals('Q')){
-                return;
-            }
-            sell = doAction(inputs);
-        }while(sell != true);
-                
-    }
+    public sellItemsMenuView() {
 
-    private static String[] getInputs() {
-        System.out.println("Pick from our Menu, What do you want to do");
-        String[] inputs = new String[1];
-        boolean items = false;
-        while (items == false){
-            System.out.println("");
-            Scanner enter;
-            enter = new Scanner(System.in);
-            //Enter the character for the options
-            String menuOptions = enter.nextLine().trim();
-            if(menuOptions.length() < 1 || menuOptions.length() == 0){
-                System.out.println("Please pick from our options");
-                displaySellItemsMenuView();
-            }
-            inputs[0] = menuOptions;
-            items = true;
-        }
-        return inputs;
-    }
-
-    private static boolean doAction(String[] inputs) {
-        char options = Character.toUpperCase(inputs[0].charAt(0));
+        super("This is the menu!\n" 
+                +"F - Food\n" + "M - Microchip\n" + "Q - Quit"
+        );
         
-        switch (options){
+    }
+    
+
+    public boolean doAction(String value) {
+        char choice = Character.toUpperCase(value.charAt(0));
+        
+        switch (choice){
             case 'F':
                 System.out.println("You have sold some Food");
                 break;
@@ -63,11 +34,17 @@ public class sellItemsMenuView {
                 break;
             case 'Q':
                 System.out.println("Exiting Buy Menu");
-                ShopMenuView.displayShopMenuView();
+                ShopMenuView shopMenuView = new ShopMenuView();
+                shopMenuView.display();
                 break;
         }
         return true;
     }
+
+//    @Override
+//    public boolean doAction(String value) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     
 }

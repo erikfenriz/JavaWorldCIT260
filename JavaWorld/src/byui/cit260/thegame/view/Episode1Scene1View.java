@@ -5,7 +5,6 @@
  */
 package byui.cit260.thegame.view;
 
-import static byui.cit260.thegame.view.HelpMenuView.displayHelpMenuView;
 import java.util.Scanner;
 
 /**
@@ -13,6 +12,7 @@ import java.util.Scanner;
  * @author Erik Rybalkin
  */
 public class Episode1Scene1View {
+
     
   static void Episode1Scene1ViewDisplay(){
       System.out.println("*The rain is pouring on the roof of a moving wagon*");
@@ -45,8 +45,9 @@ public class Episode1Scene1View {
         Scanner s =  new Scanner(System.in);
         choice = s.nextLine().trim();
         if(choice.length() < 1 || choice.length() == 0){
-            System.out.println("**You need to enter a non-blank value**"); 
-            displayHelpMenuView();
+            System.out.println("**You need to enter a non-blank value**");
+            HelpMenuView helpMenuView = new HelpMenuView();
+            helpMenuView.display();
         }
         inputs[0] = choice;
         valid = true;

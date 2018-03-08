@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.view;
-import java.util.Scanner;
 import byui.cit260.thegame.control.GameControl;
 import byui.cit260.thegame.model.Player;
 
@@ -12,51 +11,20 @@ import byui.cit260.thegame.model.Player;
  *
  * @author Erik Rybalkin
  */
-public class StartProgramView{
+public class StartProgramView extends View{
 
-    public StartProgramView() {
+  public StartProgramView() {
+
+        super("Welcome to the JavaWorld\n"
+                + "************************\n"
+                + "What is your name?"
+        );
+        
     }
     
-    public void displayStartProgramView(){
-        System.out.println("Welcome to the JavaWorld");
-        System.out.println("************************"); 
-         boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }else if(inputs[0].toUpperCase().equals("Q")){
-                return;
-            }
-            endOfView = doAction(inputs);
-        }while(!endOfView);
-    }             
-    
-    private String[] getInputs() {
-        String[] inputs = new String[1];
-        System.out.println("**Enter your name**");
-        String name;
-       
-        boolean valid = false;
-       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        name = s.nextLine().trim();
-        if(name.length() < 1 || name.length() == 0){
-            System.out.println("**You need to enter a non-blank value**"); 
-            continue;
-        }
-        inputs[0] = name;
-        valid = true;
-        }  
+    public boolean doAction(String value){
         
-        return inputs;
-    }
-
-    private boolean doAction(String[] inputs){
-        
-        String playersName = inputs[0];
+        String playersName = value;
         Player player = GameControl.savePlayer(playersName);
         
         if(player == null){
@@ -67,7 +35,11 @@ public class StartProgramView{
                 + "\n Welcome to the JavaWorld, " 
                 + playersName + "!" + "\n We hope you have a lot of fun!"
                 +"\n=================================================");
-        MainMenuView.displayMainMenuView();
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
         return true;
     }
+
+ 
+   
 }
