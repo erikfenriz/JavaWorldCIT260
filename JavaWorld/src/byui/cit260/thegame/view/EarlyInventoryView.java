@@ -5,17 +5,11 @@
  */
 package byui.cit260.thegame.view;
 
-import java.util.Random;
-import java.util.Scanner;
-
 /**
  *
  * @author Erik Rybalkin
  */
 class EarlyInventoryView extends View{
-        Random r = new Random();
-        int randomInt = r.nextInt(50);
-    
       
     public EarlyInventoryView() {
         
