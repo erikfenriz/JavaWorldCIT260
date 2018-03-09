@@ -5,68 +5,43 @@
  */
 package byui.cit260.thegame.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Erik Rybalkin
  */
-public class Episode1Scene1View {
+public class Episode1Scene1View extends View{
 
     
-  static void Episode1Scene1ViewDisplay(){
-      System.out.println("*The rain is pouring on the roof of a moving wagon*");
-         System.out.println("The train is arriving at platform… Logic Gate shortly."
-                 + "\n Check your status and don’t forget your belongings.");
-         System.out.println(" ");
-         System.out.println("1. Check Status");
-         System.out.println("2. Check Inventory");
-         
-      
-        boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            endOfView = doAction(inputs);
-              if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }
-        }while(!endOfView);
+    public Episode1Scene1View() {
+        
+        
+        super("*The rain is pouring on the roof of a moving wagon*" +
+        "\nThe train is arriving at platform… Logic Gate shortly."+
+                "\n Check your status and don’t forget your belongings."+
+        "\nI need to use ‘I’ button to check my things often so it won’t happen again!"
+                + "\n "
+                + "\n1. Check Status"
+                + "\n2. Check Inventory"
+        );
+        
     }
-
-    private static String[] getInputs() {
-  String[] inputs = new String[1];
-        System.out.println("Make a selection");
-        String choice;
-       
-        boolean valid = false;
-       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        choice = s.nextLine().trim();
-        if(choice.length() < 1 || choice.length() == 0){
-            System.out.println("**You need to enter a non-blank value**");
-            HelpMenuView helpMenuView = new HelpMenuView();
-            helpMenuView.display();
-        }
-        inputs[0] = choice;
-        valid = true;
-        }
-        return inputs;    
-    }
-
-    private static boolean doAction(String[] inputs) {
- char choice = Character.toUpperCase(inputs[0].charAt(0));
+  
+    @Override
+    public boolean doAction(String value){
+        char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case '1':
-                EarlyStatusView.earlyStatusViewDisplay();
+                EarlyStatusView earlyStatusView = new EarlyStatusView();
+                earlyStatusView.display();
                 break;
-            case '2':                
-                EarlyInventoryView.earlyInventoryViewDisplay();
+            case '2':     
+                EarlyInventoryView earlyInventoryView = new EarlyInventoryView();
+                earlyInventoryView.display();
             break;
             default: System.out.println("Invalid Choice");
             break;
         }
         return false;
     }
+
 }

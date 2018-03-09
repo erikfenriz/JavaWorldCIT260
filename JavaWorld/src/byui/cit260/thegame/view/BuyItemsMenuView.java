@@ -4,16 +4,13 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.view;
-
-import java.util.Scanner;
-
 /**
  *
  * @author Rayshorn Richardson
  */
-public class sellItemsMenuView extends View{
+public class BuyItemsMenuView extends View{
     
-    public sellItemsMenuView() {
+    public BuyItemsMenuView() {
 
         super("This is the menu!\n" 
                 +"F - Food\n" + "M - Microchip\n" + "Q - Quit"
@@ -21,30 +18,28 @@ public class sellItemsMenuView extends View{
         
     }
     
-
+    
+    @Override
     public boolean doAction(String value) {
         char choice = Character.toUpperCase(value.charAt(0));
         
-        switch (choice){
+        switch(choice){
             case 'F':
-                System.out.println("You have sold some Food");
+                System.out.println("You have bought some Food");
                 break;
             case 'M':
-                System.out.println("You have sold some Microchips");
+                System.out.println("You have bought some Microchips");
                 break;
             case 'Q':
                 System.out.println("Exiting Buy Menu");
                 ShopMenuView shopMenuView = new ShopMenuView();
-                shopMenuView.display();
+            shopMenuView.display();
+                break;
+            default:
+                System.out.println("Invalid Choice");
                 break;
         }
-        return true;
+        return false;
     }
 
-//    @Override
-//    public boolean doAction(String value) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-
-    
 }

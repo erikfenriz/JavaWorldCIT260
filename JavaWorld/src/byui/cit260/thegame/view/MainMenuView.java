@@ -9,7 +9,7 @@ import byui.cit260.thegame.control.GameControl;
 import javaworld.JavaWorld;
 /**
  *
- * @author user
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
 public class MainMenuView extends View{
 

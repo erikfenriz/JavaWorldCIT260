@@ -19,9 +19,4 @@ public abstract class PlayerControl {
       return new Player(name);
       
     }
-//   public static Player changeMood(Player player){
-//      double mood = 0;
-//       player.setMood(mood);
-//       
-//       return player;
-   }
+}

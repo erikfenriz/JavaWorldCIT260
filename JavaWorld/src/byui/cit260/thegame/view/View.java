@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author user
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
 public abstract class View implements ViewInterface {
     
@@ -31,7 +31,7 @@ public abstract class View implements ViewInterface {
             
             String value = this.getInput();
             if (value.toUpperCase().equals("Q"))
-                continue;
+                return;
             
             done = this.doAction(value);
         } while (!done);

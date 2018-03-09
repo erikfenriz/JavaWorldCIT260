@@ -5,63 +5,30 @@
  */
 package byui.cit260.thegame.view;
 
-import java.util.Random;
-import java.util.Scanner;
-
 /**
  *
  * @author Erik Rybalkin
  */
-public class InventoryAfterStatusView {
+public class InventoryAfterStatusView extends View{
 
-    static void inventoryAfterStatusViewDisplay() {
-      Random r = new Random();
-        int randomInt = r.nextInt(50);
-
-    System.out.println("Money from another country: "+randomInt+"$\n" +
-        "What? How is it possible? I… got robbed!…");
-    System.out.println("*The wagon was empty*"+
-        "\nI need to use ‘I’ button to check my things often so it won’t happen again!");
-    System.out.println(" ");
-    System.out.println("1. Look through the window");
- 
-             boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            endOfView = doAction(inputs);
-              if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }
-        }while(!endOfView);
-    }
-   
-
-    private static String[] getInputs() {
-         String[] inputs = new String[1];
-        System.out.println("Make a selection");
-        String choice;
-       
-        boolean valid = false;
-       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        choice = s.nextLine().trim();
-        if(choice.length() < 1 || choice.length() == 0){
-            LookThroughTheWindowAfterInventory.lookThroughTheWindowAfterInventoryDisplay();
-        }
-        inputs[0] = choice;
-        valid = true;
-        }
-        return inputs;
+    
+    public InventoryAfterStatusView(){
+        super("Money from another country: 13$\n" +
+        "What? How is it possible? I… got robbed!…"+
+                "*The wagon was empty*\n"+
+        "\nI need to use ‘I’ button to check my things often so it won’t happen again!\n"+
+                " \n"
+        + "1. Look through the window");
     }
 
-    private static boolean doAction(String[] inputs) {
+     @Override
+    public boolean doAction(String value)  {
   
- char choice = Character.toUpperCase(inputs[0].charAt(0));
+            char choice = Character.toUpperCase(value.charAt(0));
         
             if(choice == '1'){
-                StatusAfterInventoryView.StatusAfterInventoryViewDisplay();
+                StatusAfterInventoryView statusAfterInventoryView = new StatusAfterInventoryView();
+                statusAfterInventoryView.display();
             }else{
                 System.out.println("Invalid Choice");
             }

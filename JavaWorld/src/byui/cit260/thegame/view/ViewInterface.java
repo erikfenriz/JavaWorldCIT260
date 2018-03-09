@@ -7,7 +7,7 @@ package byui.cit260.thegame.view;
 
 /**
  *
- * @author user
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
 public interface ViewInterface {
     public void display();

@@ -23,16 +23,18 @@ public class PurposeHelpMenuView extends View{
         
     }
 
+       @Override
         public boolean doAction(String value) {
         char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case 'Q':
-                HelpMenuView helpMenuView = new HelpMenuView();
-                helpMenuView.display();
-                break;
+                MainMenuView mainMenuView = new MainMenuView();
+                mainMenuView.display();
+                return true;
             default: System.out.println("Invalid Choice");
             break;
         }
         return false;
     }
+        
 }
