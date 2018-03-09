@@ -5,54 +5,24 @@
  */
 package byui.cit260.thegame.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Erik Rybalkin
  */
-public class FirstArrivalView {
-
-    static void firstArrivalViewDisplay() {
-        System.out.println("You have arrived. Welcome to Java World.\n" +
+public class FirstArrivalView extends View{
+    
+    
+        public FirstArrivalView(){
+     super("You have arrived. Welcome to Java World.\n" +
                       "1.Exit train and try to find help\n" +
                       "2.Exit train and find the Guru\n" +
                       "3.Check the Map\n"
                         + "4. Visit Store");
-                  boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            endOfView = doAction(inputs);
-              if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }
-        }while(!endOfView);
-    }
-    
-
-    private static String[] getInputs() {
-  String[] inputs = new String[1];
-        System.out.println("Make a selection");
-        String choice;
-       
-        boolean valid = false;
-       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        choice = s.nextLine().trim();
-        if(choice.length() < 1 || choice.length() == 0){
-            System.out.println("**You need to enter a non-blank value**"); 
-            firstArrivalViewDisplay();
-        }
-        inputs[0] = choice;
-        valid = true;
-        }
-        return inputs;    
     }
 
-    private static boolean doAction(String[] inputs) {
-char choice = Character.toUpperCase(inputs[0].charAt(0)); 
+     @Override
+    public boolean doAction(String value) {
+           char choice = Character.toUpperCase(value.charAt(0));
            if(choice == '1'){
                CustomsView.CustomsViewDisplay();
            }else if(choice == '2'){
@@ -67,6 +37,7 @@ char choice = Character.toUpperCase(inputs[0].charAt(0));
         }
         return false;
     }
+
 }
 
 

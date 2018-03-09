@@ -22,7 +22,8 @@ public class LookThroughTheWindowAfterInventory extends View{
         char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case '1':
-                FirstArrivalView.firstArrivalViewDisplay();
+                FirstArrivalView firstArrivalView = new FirstArrivalView();
+                firstArrivalView.display();
                 break;
             default: System.out.println("Invalid Choice");
             break;
