@@ -21,7 +21,7 @@ public class StatusAfterInventoryView extends View{
                 + "1. Look through the window"
         );
         
-    }
+}
 
     @Override
     public boolean doAction(String value)  {
