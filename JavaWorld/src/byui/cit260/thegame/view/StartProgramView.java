@@ -22,6 +22,7 @@ public class StartProgramView extends View{
         
     }
     
+  @Override
     public boolean doAction(String value){
         
         String playersName = value;

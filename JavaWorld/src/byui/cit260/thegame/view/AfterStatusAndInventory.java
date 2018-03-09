@@ -5,52 +5,23 @@
  */
 package byui.cit260.thegame.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Erik Rybalkin
  */
-public class AfterStatusAndInventory {
+public class AfterStatusAndInventory extends View{
 
-    static void AfterStatusAndInventoryDisplay() {
-            System.out.println
-        ("Slightly visible lights of the tall buildings in a distance."
-                + " The train is slowing its speed and soon will stop.");
-        System.out.println(" ");
-        System.out.println("Almost there...");
-        System.out.println("1. continue...");
-        boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            endOfView = doAction(inputs);
-              if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }
-        }while(!endOfView);
-    }
-
-    private static String[] getInputs() {
-  String[] inputs = new String[1];
-        System.out.println("Make a selection");
-        String choice;
-        boolean valid = false;       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        choice = s.nextLine().trim();
-        if(choice.length() < 1 || choice.length() == 0){
-            System.out.println("**You need to enter a non-blank value**"); 
-            FirstArrivalView.firstArrivalViewDisplay();
+        public  AfterStatusAndInventory(){
+            super("Slightly visible lights of the tall buildings in a distance.\n"
+                + " The train is slowing its speed and soon will stop.\n"
+            +" \n"
+            +"Almost there...\n"
+            +"1. continue...");
         }
-        inputs[0] = choice;
-        valid = true;
-        }
-        return inputs;      
-    }
 
-    private static boolean doAction(String[] inputs) {
-char choice = Character.toUpperCase(inputs[0].charAt(0));
+    @Override
+    public boolean doAction(String value){
+char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case '1':
                 FirstArrivalView.firstArrivalViewDisplay();
@@ -60,4 +31,6 @@ char choice = Character.toUpperCase(inputs[0].charAt(0));
         }
         return false;
     }
+
+ 
 }

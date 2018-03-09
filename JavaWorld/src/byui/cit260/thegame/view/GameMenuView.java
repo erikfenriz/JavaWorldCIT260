@@ -25,7 +25,8 @@ public class GameMenuView{
         
         switch(choice){
         case "Y":
-            Episode1Scene1View.Episode1Scene1ViewDisplay();
+            Episode1Scene1View episode1Scene1View = new Episode1Scene1View();
+            episode1Scene1View.display();
         case "N":
             MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.display();

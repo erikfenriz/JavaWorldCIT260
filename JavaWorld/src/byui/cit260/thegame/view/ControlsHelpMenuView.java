@@ -8,7 +8,7 @@ package byui.cit260.thegame.view;
 
 /**
  *
- * @author user
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
 class ControlsHelpMenuView extends View{
     
@@ -21,19 +21,20 @@ class ControlsHelpMenuView extends View{
                 + "and “no” for closed-ended questions.\n"
                 + "Some screens wouldn’t prompt an input.\n"
                 + "These screens are skippable with Space button\n"
-                + "*******************************************************"
+                + "*******************************************************\n"
                 + "Q - go back"
         );
         
     }
 
 
+       @Override
     public boolean doAction(String value) {
         char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case 'Q':
-                HelpMenuView helpMenuView = new HelpMenuView();
-                helpMenuView.display();
+                MainMenuView mainMenuView = new MainMenuView();
+                mainMenuView.display();
                 break;
             default: System.out.println("Invalid Choice");
             break;

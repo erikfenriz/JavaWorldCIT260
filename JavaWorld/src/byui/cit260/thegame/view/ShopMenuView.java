@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.view;
-import java.util.Scanner;
+
 /**
  *
  * @author Rayshorn Richardson
@@ -13,7 +13,7 @@ public class ShopMenuView extends View{
     
      public ShopMenuView() {
 
-        super("Welcome to the Logic Gate Store!\n" 
+        super("Hello! Welcome to the Logic Gate Store!\n" 
                             + "B - Buy\n" + "S - Sell\n" + "Q - Quit\n"
         );
         
@@ -42,18 +42,13 @@ public class ShopMenuView extends View{
     }
 
     public void buyItems() {
-        buyItemsMenuView buyItemsMenu = new buyItemsMenuView();
+        BuyItemsMenuView buyItemsMenu = new BuyItemsMenuView();
         buyItemsMenu.display();
     }
 
     public void sellItems() {
-        sellItemsMenuView sellItemsMenu = new sellItemsMenuView();
+        SellItemsMenuView sellItemsMenu = new SellItemsMenuView();
         sellItemsMenu.display();
     }
-
-//    @Override
-//    public boolean doAction(String value) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 
 }

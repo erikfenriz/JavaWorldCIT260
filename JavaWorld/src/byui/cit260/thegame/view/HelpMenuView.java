@@ -4,10 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.view;
-import java.util.Scanner;
 /**
  *
- * @author user
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
 public class HelpMenuView extends View{
 
@@ -20,6 +19,7 @@ public class HelpMenuView extends View{
         
     }
     
+    @Override
     public boolean doAction(String value) {
         char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){

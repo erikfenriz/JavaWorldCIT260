@@ -7,7 +7,7 @@ package byui.cit260.thegame.view;
 import java.util.Scanner;
 /**
  *
- * @author user
+ * @author Erik Rybalkin
  */
 public class QuitGameView {
     

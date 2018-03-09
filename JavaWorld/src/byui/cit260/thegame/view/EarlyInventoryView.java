@@ -12,60 +12,37 @@ import java.util.Scanner;
  *
  * @author Erik Rybalkin
  */
-class EarlyInventoryView {
-
-    public static void earlyInventoryViewDisplay() {
+class EarlyInventoryView extends View{
         Random r = new Random();
         int randomInt = r.nextInt(50);
-
-    System.out.println("Money from another country: "+randomInt+"$\n" +
-        "What? How is it possible? I… got robbed!…");
-    System.out.println("*The wagon was empty*"+
-        "\nI need to use ‘I’ button to check my things often so it won’t happen again!");
-    System.out.println(" ");
-    System.out.println("1. Check Status");
-    System.out.println("2. Look through the window");
- 
-             boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            endOfView = doAction(inputs);
-              if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }
-        }while(!endOfView);
+    
+      
+    public EarlyInventoryView() {
+        
+        
+        super("Money from another country: 13$\n" +
+        "What? How is it possible? I… got robbed!…\n"+
+                "*The wagon was empty*\n"+
+        "\nI need to use ‘I’ button to check my things often so it won’t happen again!\n"
+                + " \n"
+                + "1. Check Status\n"
+                + "2. Look through the window"
+        );
+        
     }
-   
-
-    private static String[] getInputs() {
-         String[] inputs = new String[1];
-        System.out.println("Make a selection");
-        String choice;
-       
-        boolean valid = false;
-       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        choice = s.nextLine().trim();
-        if(choice.length() < 1 || choice.length() == 0){
-            LookThroughTheWindowAfterInventory.lookThroughTheWindowAfterInventoryDisplay();
-        }
-        inputs[0] = choice;
-        valid = true;
-        }
-        return inputs;
-    }
-
-    private static boolean doAction(String[] inputs) {
-  
- char choice = Character.toUpperCase(inputs[0].charAt(0));
+    
+     @Override
+    public boolean doAction(String value)  {
+        
+        char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case '1':
-                StatusAfterInventoryView.StatusAfterInventoryViewDisplay();
+                StatusAfterInventoryView statusAfterInventoryView = new StatusAfterInventoryView();
+                statusAfterInventoryView.display();
                 break;
-            case '2':                                
-                LookThroughTheWindowAfterInventory.lookThroughTheWindowAfterInventoryDisplay();
+            case '2':    
+                LookThroughTheWindowAfterInventory lookThroughTheWindowAfterInventory = new LookThroughTheWindowAfterInventory();
+                lookThroughTheWindowAfterInventory.display();
             break;
             default: System.out.println("Invalid Choice");
             break;
