@@ -26,17 +26,29 @@ public class SellItemsMenuView extends View{
         switch (choice){
             case 'F':
                 System.out.println("You have sold some Food");
+                afterShop();
                 break;
             case 'M':
                 System.out.println("You have sold some Microchips");
+                afterShop();
                 break;
             case 'Q':
                 System.out.println("Exiting Buy Menu");
-                ShopMenuView shopMenuView = new ShopMenuView();
-                shopMenuView.display();
                 break;
+            default:
+                System.out.println("Invalid choice");
+                sellMenuView();
         }
         return true;
     }
     
+    public void sellMenuView(){
+        SellItemsMenuView sellItemsMenuView = new SellItemsMenuView();
+        sellItemsMenuView.display();
+    }
+    
+    public void afterShop(){
+        AfterShopMenuView afterShopMenuView = new AfterShopMenuView();
+        afterShopMenuView.display();
+    }
 }

@@ -5,10 +5,15 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.model.Shop;
+
 /**
  *
  * @author user
  */
 public class InventoryControl {
     
+    public static Shop buyFood(String value){
+        return new Shop();
+    }
 }

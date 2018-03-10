@@ -5,6 +5,8 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.model.Shop;
+
 /**
  *
  * @author Erik Rybalkin and Rayshorn Richardson
@@ -44,4 +46,8 @@ public class ShopControl {
           return price;
     
         }
+    
+    public static Shop buyFood(String value){
+        return new Shop();
+    }
 }

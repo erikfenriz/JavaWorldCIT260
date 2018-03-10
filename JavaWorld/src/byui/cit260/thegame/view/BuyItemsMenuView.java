@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.view;
+
+/*import byui.cit260.thegame.control.InventoryControl;
+import byui.cit260.thegame.model.Shop;*/
+
 /**
  *
  * @author Rayshorn Richardson
@@ -26,20 +30,31 @@ public class BuyItemsMenuView extends View{
         switch(choice){
             case 'F':
                 System.out.println("You have bought some Food");
+                /*Shop buyFood = InventoryControl.buyFood("Food");*/
+                afterShop();
                 break;
             case 'M':
                 System.out.println("You have bought some Microchips");
+                afterShop();
                 break;
             case 'Q':
                 System.out.println("Exiting Buy Menu");
-                ShopMenuView shopMenuView = new ShopMenuView();
-            shopMenuView.display();
                 break;
             default:
                 System.out.println("Invalid Choice");
+                buyMenuView();
                 break;
         }
         return false;
     }
 
+     public void buyMenuView(){
+        BuyItemsMenuView buyItemsMenuView = new BuyItemsMenuView();
+        buyItemsMenuView.display();
+    }
+     
+    public void afterShop(){
+        AfterShopMenuView afterShopMenuView = new AfterShopMenuView();
+        afterShopMenuView.display();
+    }
 }
