@@ -60,6 +60,7 @@ public class ShopMenuView {
                 case 'S':
                     System.out.println("What will you sell?");
                     sellItems();
+                break;
                 case 'Q':
                     System.out.println("Thanks for shopping");
                     Runtime.getRuntime().exit(0);
