@@ -5,6 +5,7 @@
  */
 package byui.cit260.thegame.control;
 import byui.cit260.thegame.model.Player;
+import byui.cit260.thegame.control.Stats;
 /**
  *
  * @author user
@@ -13,9 +14,9 @@ public abstract class PlayerControl {
 
     public PlayerControl() {
     }
-      public static Player createPlayer(String name){
+      
+    public static Player createPlayer(String name){
       return new Player(name);
+      
     }
 }
-  
-

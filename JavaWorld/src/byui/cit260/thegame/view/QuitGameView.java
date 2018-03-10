@@ -7,7 +7,7 @@ package byui.cit260.thegame.view;
 import java.util.Scanner;
 /**
  *
- * @author user
+ * @author Erik Rybalkin
  */
 public class QuitGameView {
     
@@ -21,11 +21,11 @@ public class QuitGameView {
         case "Y":
             Runtime.getRuntime().exit(0);
         case "N":
-            MainMenuView.displayMainMenuView();
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.display();
             break;
         default:
             System.out.println("Invalid choice");
-            
         }    
     }
 }

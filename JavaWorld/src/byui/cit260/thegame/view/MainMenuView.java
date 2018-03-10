@@ -6,53 +6,27 @@
 package byui.cit260.thegame.view;
 
 import byui.cit260.thegame.control.GameControl;
-import java.util.Scanner;
 import javaworld.JavaWorld;
 /**
  *
- * @author user
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
-public class MainMenuView {
+public class MainMenuView extends View{
 
-    static void displayMainMenuView() {
-         System.out.println("N - Start new game\n" +
-                            "R - Restart existing game\n" +
-                            "H - Get help on how to play the game\n" +
-                            "E - Exit");
-      
-             boolean endOfView;
-        endOfView = false;
-        do{
-            String[] inputs = getInputs();
-            endOfView = doAction(inputs);
-              if(inputs.length == 0 || inputs.length < 1){
-                continue;
-            }
-        }while(!endOfView);
+    
+    public MainMenuView() {
+
+        super("N - Start new game\n" +
+              "R - Restart existing game\n" +
+              "H - Get help on how to play the game\n" +
+              "E - Exit"
+        );
+        
     }
-
-    private static String[] getInputs() {
-          String[] inputs = new String[1];
-        System.out.println("Make a selection");
-        String choice;
-       
-        boolean valid = false;
-       
-        while(valid == false){
-        Scanner s =  new Scanner(System.in);
-        choice = s.nextLine().trim();
-        if(choice.length() < 1 || choice.length() == 0){
-            System.out.println("**You need to enter a non-blank value or Q to exit**"); 
-            displayMainMenuView();
-        }
-        inputs[0] = choice;
-        valid = true;
-        }
-        return inputs;
-    }
-
-    private static boolean doAction(String[] inputs) {
-        char choice = Character.toUpperCase(inputs[0].charAt(0));
+    
+    @Override
+    public boolean doAction(String value) {
+        char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case 'N':
                 System.out.println("New Game Selected");
@@ -91,6 +65,8 @@ public class MainMenuView {
 
     private static void getHelp() {
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
+
+
 }

@@ -4,55 +4,25 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.view;
-import java.util.Scanner;
+
 /**
  *
  * @author Rayshorn Richardson
  */
-public class ShopMenuView {
+public class ShopMenuView extends View{
     
-    public static void displayShopMenuView(){
-        System.out.println("Welcome to the Logic Gate Store!\n" 
-                            + "B - Buy\n" + "S - Sell\n" + "Q - Quit\n");
-        
-        boolean shopping = false;
-        do{
-            String[] inputs = getInputs();
-            
-            if(inputs.length == 0){
-                continue;
-            }
-            else if(inputs[0].toUpperCase().equals('Q')){
-                return;
-            }
-            shopping = doAction(inputs);
-        }while(shopping != true);
-    }
+     public ShopMenuView() {
 
-    private static String[] getInputs() {
-        System.out.println("Pick from our Menu, What do you want to do");
-        String[] inputs = new String[1];
-        boolean items = false;
-        while (items == false){
-            System.out.println("");
-            Scanner enter;
-            enter = new Scanner(System.in);
-            //Enter the character for the options
-            String menuOptions = enter.nextLine().trim();
-            if(menuOptions.length() < 1 || menuOptions.length() == 0){
-                System.out.println("Please pick from our options");
-                displayShopMenuView();
-            }
-            inputs[0] = menuOptions;
-            items = true;
-        }
-        return inputs;
-    }
-
-    private static boolean doAction(String[] inputs) {
-        char input = Character.toUpperCase(inputs[0].charAt(0));
+        super("Hello! Welcome to the Logic Gate Store!\n" 
+                            + "B - Buy\n" + "S - Sell\n" + "Q - Quit\n"
+        );
         
-        switch(input){
+    }
+    @Override
+      public boolean doAction(String value) {
+        char choice = Character.toUpperCase(value.charAt(0));
+        
+        switch(choice){
                 case 'B':
                     System.out.println("What will you buy?");
                     buyItems();
@@ -72,14 +42,14 @@ public class ShopMenuView {
         return false;
     }
 
-    private static void buyItems() {
-        buyItemsMenuView buyItemsMenu = new buyItemsMenuView();
-        buyItemsMenuView.displayBuyItemsMenuView();
+    public void buyItems() {
+        BuyItemsMenuView buyItemsMenu = new BuyItemsMenuView();
+        buyItemsMenu.display();
     }
 
-    private static void sellItems() {
-        sellItemsMenuView sellItemsMenu = new sellItemsMenuView();
-        sellItemsMenuView.displaySellItemsMenuView();
+    public void sellItems() {
+        SellItemsMenuView sellItemsMenu = new SellItemsMenuView();
+        sellItemsMenu.display();
     }
 
 }

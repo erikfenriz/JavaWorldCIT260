@@ -7,8 +7,10 @@ package byui.cit260.thegame.view;
 
 /**
  *
- * @author raysh
+ * @author Erik Rybalkin & Rayshorn Richardson
  */
-class inputs {
-    
+public interface ViewInterface {
+    public void display();
+    public String getInput();
+    public boolean doAction(String value);
 }

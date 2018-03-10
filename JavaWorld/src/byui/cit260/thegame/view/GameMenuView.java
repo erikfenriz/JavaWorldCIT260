@@ -5,12 +5,35 @@
  */
 package byui.cit260.thegame.view;
 
+import java.util.Scanner;
+
 /**
  *
- * @author user
+ * @author Erik Rybalkin
  */
-class GameMenuView {
+public class GameMenuView{
+    
+    
+    
     public static void displayGameMenuView(){
-        System.out.println("**The method displayGameMenuView() is called**");
+        
+        System.out.println("Are you ready? Y/N");
+        
+        String choice;
+        Scanner s = new Scanner(System.in);
+        choice = s.nextLine().trim().toUpperCase();
+        
+        switch(choice){
+        case "Y":
+            Episode1Scene1View episode1Scene1View = new Episode1Scene1View();
+            episode1Scene1View.display();
+        case "N":
+            MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.display();
+            break;
+        default:
+            System.out.println("Invalid choice");
+        }
     }
+
 }

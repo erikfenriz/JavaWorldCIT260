@@ -25,6 +25,7 @@ public class GameControl {
     }
     public static void createNewGame(Player player) {
         String name = player.getName();
-        System.out.println(name + "!!!");
+        System.out.println("See? This is Java World, "+ name 
+                + "!\nThe only place where you achieve the goals that were envisioned in dreams!");
     }
 }
