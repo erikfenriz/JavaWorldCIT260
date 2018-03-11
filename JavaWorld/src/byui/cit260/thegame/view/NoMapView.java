@@ -9,27 +9,24 @@ package byui.cit260.thegame.view;
  *
  * @author Erik Rybalkin
  */
-public class CustomsView extends View{
+public class NoMapView extends View{
 
-    public CustomsView() {
-        
-        
-        super("Hello! Is it your first time in Java World? Y/N"
+    public NoMapView() {
+
+        super("I need to find a map!"
+                +"\n"
+                +"Q - continue"
         );
         
     }
     
-        @Override
+      @Override
     public boolean doAction(String value) {
         char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
-            case 'Y':
-                CustomsYesView customsYesView = new CustomsYesView();
-                customsYesView.display();
-                break;
-            case 'N':      
-                CustomsNoView customsNoView = new CustomsNoView();
-                customsNoView.display();
+            case 'Q':
+            FirstArrivalView firstArrivalView = new FirstArrivalView();
+            firstArrivalView.display();
             break;
             default: System.out.println("Invalid Choice");
             break;

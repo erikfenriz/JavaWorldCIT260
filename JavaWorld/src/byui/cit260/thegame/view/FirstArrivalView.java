@@ -23,18 +23,26 @@ public class FirstArrivalView extends View{
      @Override
     public boolean doAction(String value) {
            char choice = Character.toUpperCase(value.charAt(0));
-           if(choice == '1'){
-               CustomsView.CustomsViewDisplay();
-           }else if(choice == '2'){
-               System.out.println("method called"); 
-           }else if(choice == '3'){
-               System.out.println("method called");
-           }else if(choice == '4'){
-               ShopMenuView shopMenuView = new ShopMenuView();
-               shopMenuView.display();
-           }else{
-               System.out.println("Invalid Choice");
-        }
+            switch (choice) {
+                case '1':
+                   
+                    break;
+                case '2':
+                   CustomsView customsView = new CustomsView();
+                   customsView.display();
+                    break;
+                case '3':
+                    NoMapView noMapView = new NoMapView();
+                    noMapView.display();
+                    break;
+                case '4':
+                    ShopMenuView shopMenuView = new ShopMenuView();
+                    shopMenuView.display();
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
+                    break;
+            }
         return false;
     }
 
