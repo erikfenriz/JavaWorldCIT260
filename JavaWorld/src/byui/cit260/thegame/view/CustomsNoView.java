@@ -9,32 +9,35 @@ package byui.cit260.thegame.view;
  *
  * @author Erik Rybalkin
  */
-public class CustomsView extends View{
+public class CustomsNoView extends View{
 
-    public CustomsView() {
+    public CustomsNoView() {
         
         
-        super("Hello! Is it your first time in Java World? Y/N"
+        super("Oh you are from JavaScript World. We have no Visa pass for you!"
+                + "\n ****************************"
+                + "\n1.What is JavaScript?"
+                + "\n2.Visa?"
         );
         
     }
-    
-        @Override
+
+    @Override
     public boolean doAction(String value) {
         char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
-            case 'Y':
-                CustomsYesView customsYesView = new CustomsYesView();
-                customsYesView.display();
+            case '1':
+               System.out.println("Don't hold the queue");
                 break;
-            case 'N':      
-                CustomsNoView customsNoView = new CustomsNoView();
-                customsNoView.display();
+            case '2':      
+               System.out.println("Don't hold the queue");
             break;
             default: System.out.println("Invalid Choice");
             break;
         }
         return false;
     }
+    
+   
     
 }
