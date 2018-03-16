@@ -5,8 +5,8 @@
  */
 package byui.cit260.thegame.model;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Objects;
+import javax.tools.JavaFileManager;
 /**
  *
  * @author Erik Rybalkin
@@ -15,8 +15,8 @@ public class Map implements Serializable{
     private String description;
     private int rowCount;
     private int colCount;
-    private ArrayList<Location> locations = new ArrayList<Location>();
-
+    private Locations[][] location = null;
+    
     public Map() {
     }
 
@@ -44,17 +44,19 @@ public class Map implements Serializable{
         this.colCount = colCount;
     }
 
-    public ArrayList<Location> getLocations() {
-        return locations;
+    public Locations[][] getLocation() {
+        return location;
     }
 
-    public void setLocations(ArrayList<Location> locations) {
-        this.locations = locations;
+    public void setLocation(Locations[][] location) {
+        this.location = location;
     }
+
+
 
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", colCount=" + colCount + ", locations=" + locations + '}';
+        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", colCount=" + colCount + ", locations=" + location + '}';
     }
 
     @Override
@@ -63,7 +65,7 @@ public class Map implements Serializable{
         hash = 67 * hash + Objects.hashCode(this.description);
         hash = 67 * hash + this.rowCount;
         hash = 67 * hash + this.colCount;
-        hash = 67 * hash + Objects.hashCode(this.locations);
+        hash = 67 * hash + Objects.hashCode(this.location);
         return hash;
     }
 
@@ -88,10 +90,13 @@ public class Map implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.locations, other.locations)) {
+        if (!Objects.equals(this.location, other.location)) {
             return false;
         }
         return true;
+    }
+
+    public void setLocations(JavaFileManager.Location[][] locations) {
     }
 
   

@@ -5,6 +5,8 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.model.Game;
+import byui.cit260.thegame.model.Map;
 import byui.cit260.thegame.model.Player;
 import javaworld.JavaWorld;
 
@@ -23,9 +25,32 @@ public class GameControl {
         JavaWorld.setCurrentPlayer(player);
         return player;
     }
-    public static void createNewGame(Player player) {
+    
+    
+    public static int createNewGame(Player player){
         String name = player.getName();
         System.out.println("See? This is Java World, "+ name 
                 + "!\nThe only place where you achieve the goals that were envisioned in dreams!");
-    }
+        
+   
+if(player == null) return -1;
+
+    Game game = new Game();
+    game.setPlayer(player);
+    JavaWorld.setCurrentGame(game);
+    
+         int noOfColumns = 5;
+        int noOfRows = 5;
+
+    Map map = MapControl.createMap(noOfRows, noOfColumns);
+        // make sure map was created.
+        if (map == null) {
+            return -1;
+        } else {
+            game.setMap(map);
+            return 1; // indicates success
+        }
+
+          }
+  
 }
