@@ -14,8 +14,17 @@ public class Game implements Serializable{
     private double totalTime;
     private int noPlayer;
     private Player player;
+    private Map map;
 
     public Game() {
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     public double getTotalTime() {

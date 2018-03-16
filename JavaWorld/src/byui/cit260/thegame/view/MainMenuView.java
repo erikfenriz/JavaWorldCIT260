@@ -6,6 +6,7 @@
 package byui.cit260.thegame.view;
 
 import byui.cit260.thegame.control.GameControl;
+import java.util.Scanner;
 import javaworld.JavaWorld;
 /**
  *
@@ -19,6 +20,7 @@ public class MainMenuView extends View{
         super("N - Start new game\n" +
               "R - Restart existing game\n" +
               "H - Get help on how to play the game\n" +
+              "M - Display Game's Map\n" +  
               "E - Exit"
         );
         
@@ -42,6 +44,8 @@ public class MainMenuView extends View{
             break;
             case 'E':
                 QuitGameView.displayQuitGameView();
+            case 'M':
+                showMap();
             case 'Q': 
                 System.out.println("Exit");
             Runtime.getRuntime().exit(0);
@@ -68,5 +72,53 @@ public class MainMenuView extends View{
         helpMenuView.display();
     }
 
-
+    private void showMap(){
+          System.out.println("*You are here---​​           | | Classy Town =======^^^^=^^^Loop Mountain=^^^= = == = = = =Library Garden ++\n" +
+"     ~ || ~                     | |​​​^^^^  ||​^^^                      + + + + + + + +\n" +
+"               ~  ||  ~                     | |​​​   ^^ ^||​^^\n" +
+"​    ~  ||  ~                     | | Array city​​               ||\n" +
+"​    ~   ||  ~                    | |                                             ||\n" +
+"​      ~  ||  ~                   | |         ​​​           ||                                                |\n" +
+"Logic Gate ============= Compiler Path                                              |  ===========Switch Cross============||\n" +
+"    ~  ||  ~                    }}                                            ||                     ||                          |\n" +
+"​    ~   ||  ~                    }|}}                                         ||                      ||\n" +
+"​      Import Harbor​​}}}}                                                              ||​           ||\n" +
+"    ~  ||  ~                  | }}}}                                         ||                     NetBeans Farm\n" +
+"                ~  ||  ~                   } }Bytecode sea                                         ||\n" +
+"​    ~   ||  ~                    } }}}}                                     ||\n" +
+"​      ~  ||  ~                   }}​​​​*Run INN///////////////////////Math River//////////////\n" +
+"Math Pit                                 | |​​​​​​​/////////////////////////////// \n" +
+"​           []========== | | Variable Ville-------Constant Heights​​​//////////////////////// \n" +
+"     ~ || ~                     | |​​​​​​//////////////\n" +
+"               ~  ||  ~                     | |​​​​​​////////////\n" +
+"​    ~  ||  ~                     | | IF Fork​​​​​​/////////////\n" +
+"​    ~   ||  ~                    | |​​​​​​//////\n" +
+"​      ~  ||  ~                   | |​​​​​​////      ~~~~~~~~~\n" +
+"Logic Gate ============= Error Purgatory   ====================System Creek //////////////////File Swamp~~~~~~\n" +
+"    ~  ||  ~​​​​​​​​​~~~~~~~\n" +
+"​    ~   ||  ~ ​​​​​​​​​~~~~~~\n" +
+"​      ~  ||  ~​​​​​​​​​~~~~~~\n" +
+"                ~  ||  ~\n" +
+"​    ~   ||  ~​​**************​​​​~~~~~~~~~~~~\n" +
+"​      ~  ||  ~​​**************​​​    ~~~~~~~~~~~~~~~~~~\n" +
+"Math Pit ==============******Function Forest*****----Public Mine​          ~~~~~~~Git Lake~~~####GitHub Mud \n" +
+"​​​​||||\n" +
+"​​​​||||||\n" +
+"​​​​​|||||| ​​​​​------------------------\n" +
+"​​​​​|||||||||||||||||Static Volcano======Main Track=======Duke’s Heaven                 |\n" +
+"​​​​​​​​​​------------------------------------"+
+                  "\nQ - continue");
+    String choice;
+    
+    Scanner s = new Scanner(System.in);
+    choice = s.nextLine().trim().toUpperCase();
+    switch(choice){
+        case "Q":
+            this.display();
+        default:
+            System.out.println("Invalid choice");
+        }   
+        
+    }
+    
 }
