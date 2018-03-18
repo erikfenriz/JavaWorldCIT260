@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.thegame.view;
+import byui.cit260.thegame.control.ShopControl;
 
 /*import byui.cit260.thegame.control.InventoryControl;
 import byui.cit260.thegame.model.Shop;*/
@@ -29,8 +30,8 @@ public class BuyItemsMenuView extends View{
         
         switch(choice){
             case 'F':
-                System.out.println("You have bought some Food");
-                /*Shop buyFood = InventoryControl.buyFood("Food");*/
+                //System.out.println("You have bought some Food");
+                ShopControl.buyFood();
                 afterShop();
                 break;
             case 'M':

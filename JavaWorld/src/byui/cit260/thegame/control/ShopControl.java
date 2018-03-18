@@ -6,6 +6,7 @@
 package byui.cit260.thegame.control;
 
 import byui.cit260.thegame.model.Shop;
+import java.util.Scanner;
 
 /**
  *
@@ -47,7 +48,13 @@ public class ShopControl {
     
         }
     
-    public static Shop buyFood(String value){
-        return new Shop();
+    public static double buyFood(){
+        Scanner q;
+        q = new Scanner(System.in);
+        
+        System.out.println("Enter a quantity: ");
+        double quant = q.nextDouble();
+        InventoryControl.InventoryControl(quant);
+        return 1;
     }
 }

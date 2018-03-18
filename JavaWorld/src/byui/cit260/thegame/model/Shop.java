@@ -16,6 +16,7 @@ public class Shop implements Serializable{
     private boolean sell;
     private Location locations;
     private ArrayList<Item> items = new ArrayList<Item>();
+    private double quantity;
 
     public Shop() {
     }
@@ -49,6 +50,14 @@ public class Shop implements Serializable{
 
     public void setSell(boolean sell) {
         this.sell = sell;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
     }
 
     @Override
