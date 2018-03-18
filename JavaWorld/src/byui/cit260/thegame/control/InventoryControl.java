@@ -5,15 +5,32 @@
  */
 package byui.cit260.thegame.control;
 
-import byui.cit260.thegame.model.Shop;
-
 /**
  *
  * @author user
  */
-public class InventoryControl {
+public enum InventoryControl {
+        
+    Food,
+    Microchip;
+
+   
     
-    public static Shop buyFood(String value){
-        return new Shop();
+    private double quantity;
+    
+    InventoryControl(double quant) {
+        this.quantity = quant;
+    }
+/*public static Shop buyItems(double value){
+System.out.println("You have bought" + value);
+return new Shop();
+} */   
+
+    public double quantity() {
+        return quantity;
+    }
+
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
     }
 }
