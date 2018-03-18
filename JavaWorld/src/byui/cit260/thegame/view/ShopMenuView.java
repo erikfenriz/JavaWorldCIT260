@@ -14,7 +14,7 @@ public class ShopMenuView extends View{
      public ShopMenuView() {
 
         super("Hello! Welcome to the Logic Gate Store!\n" 
-                            + "B - Buy\n" + "S - Sell\n" + "Q - Quit\n"
+                            + "B - Buy\n" + "S - Sell\n" + "H - Excuse me...\n"
         );
         
     }
@@ -31,9 +31,9 @@ public class ShopMenuView extends View{
                     System.out.println("What will you sell?");
                     sellItems();
                 break;
-                case 'Q':
-                    System.out.println("Thanks for shopping");
-                    Runtime.getRuntime().exit(0);
+                case 'H':          
+                    HelpShop helpShop = new HelpShop();                    
+                    helpShop.display();
                 break;
                 default:
                     System.out.println("Invalid Selection");
