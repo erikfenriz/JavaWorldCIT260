@@ -7,30 +7,8 @@ package byui.cit260.thegame.control;
 
 /**
  *
- * @author user
+ * @author raysh
  */
-public enum InventoryControl {
-        
-    Food,
-    Microchip;
-
-   
-    
-    private double quantity;
-    
-    InventoryControl(double quant) {
-        this.quantity = quant;
-    }
-/*public static Shop buyItems(double value){
-System.out.println("You have bought" + value);
-return new Shop();
-} */   
-
-    public double quantity() {
-        return quantity;
-    }
-
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
-    }
+public class InventoryControl {
+  
 }

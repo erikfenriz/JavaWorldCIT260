@@ -5,6 +5,7 @@
  */
 package javaworld;
 
+import byui.cit260.thegame.exceptions.ShopControlException;
 import byui.cit260.thegame.view.StartProgramView;
 import byui.cit260.thegame.model.Player;
 import byui.cit260.thegame.model.Game;
@@ -19,10 +20,12 @@ public class JavaWorld {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        try{
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-       
+        }catch(ShopControlException sce){
+            System.out.println(sce.getMessage());
+        }
     }
      public static Game getCurrentGame() {
     return currentGame;

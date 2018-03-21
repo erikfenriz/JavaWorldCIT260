@@ -5,7 +5,7 @@
  */
 package byui.cit260.thegame.control;
 
-import byui.cit260.thegame.model.Shop;
+import byui.cit260.thegame.exceptions.ShopControlException;
 import java.util.Scanner;
 
 /**
@@ -17,9 +17,15 @@ public class ShopControl {
     public int price = 50;
     public double mood = 13.4;
     
-    public static double calcShopDiscount(double mood, int day,double price){
+    public static double calcShopDiscount(double mood, int day,double price) throws ShopControlException{
     
         double discount;
+    if((day < 0)){
+        throw new ShopControlException("This is a negative value");
+    }
+    else if((mood < 1)){
+        throw new ShopControlException("This can't be below 1");
+    }
     
     if((day <= 4 && day >= 0) && (mood >= 90 && mood <= 100)){
     discount = price * 0.9; 
@@ -54,7 +60,8 @@ public class ShopControl {
         
         System.out.println("Enter a quantity: ");
         double quant = q.nextDouble();
-        InventoryControl.InventoryControl(quant);
+        //InventoryItem.InventoryControl(quantity);
+        double costOfItem = quant /*\* COST*/;
         return 1;
     }
 }
