@@ -71,4 +71,12 @@ this.visited = visited;
         return "Location{" + "name=" + name + ", row=" + row + ", col=" + col + ", requirements=" + requirements + ", visited=" + visited + '}';
     }
 
+    public Object getPlace() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setSymbol(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
