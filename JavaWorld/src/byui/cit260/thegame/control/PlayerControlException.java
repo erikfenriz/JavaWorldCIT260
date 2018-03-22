@@ -9,9 +9,9 @@ package byui.cit260.thegame.control;
  *
  * @author user
  */
-class InventoryType {
+class PlayerControlException extends Exception {
 
-    static Object values() {
+    PlayerControlException(String the_total_cost_cannot_be_negative_you_dum) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

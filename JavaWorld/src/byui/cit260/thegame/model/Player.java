@@ -37,7 +37,9 @@ public class Player implements Serializable {
     public String getName() {
         return name;
     }
-
+public void getInventory(){
+    System.out.println("method called");
+}
     public void setName(String name) {
         this.name = name;
     }
@@ -91,6 +93,14 @@ public class Player implements Serializable {
 //    
 //    public double getMood() {
 //        return mood;
+
+    public int getAmountofMoney() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setAmountofMoney(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     }
 
     

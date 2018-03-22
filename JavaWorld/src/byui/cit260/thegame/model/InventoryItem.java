@@ -11,6 +11,20 @@ package byui.cit260.thegame.model;
  * @author user
  */
 public class InventoryItem {
+
+    public InventoryItem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
+
+    public Object getInventoryType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public double getQuantityInStock() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public enum Item {
     
     Food("Food", "description"),

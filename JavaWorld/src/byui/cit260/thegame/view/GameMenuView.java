@@ -5,7 +5,9 @@
  */
 package byui.cit260.thegame.view;
 
+import byui.cit260.thegame.control.GameControl;
 import java.util.Scanner;
+import javaworld.JavaWorld;
 
 /**
  *
@@ -16,7 +18,7 @@ public class GameMenuView{
     
     
     public static void displayGameMenuView(){
-        
+        GameControl.createNewGame(JavaWorld.getCurrentPlayer());
         System.out.println("Are you ready? Y/N");
         
         String choice;
