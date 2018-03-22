@@ -5,12 +5,25 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.exceptions.StatException;
+
 /**
  *
  * @author Erik Rybalkin
  */
 public class Stats {
-    public static double increaseMood(double position, double item, double mood) {
+    
+    
+    public static double increaseMood(double position, double item, double mood) throws StatException {
+
+        if((position < 0)){
+        throw new StatException("This is a negative value");
+    }
+    else if((mood < 1)){
+        throw new StatException("This can't be below 1");
+    }
+    
+        
         // Calculate bonus
         double bonus = (position + (item/(mood/100)));
        

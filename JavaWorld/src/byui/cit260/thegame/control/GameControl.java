@@ -12,7 +12,7 @@ import javaworld.JavaWorld;
 
 /**
  *
- * @author user
+ * @author Erik 
  */
 public class GameControl {
 
@@ -33,6 +33,7 @@ public class GameControl {
                 + "!\nThe only place where you achieve the goals that were envisioned in dreams!");
         
    
+        
 if(player == null) return -1;
 
     Game game = new Game();
@@ -42,15 +43,17 @@ if(player == null) return -1;
          int noOfColumns = 5;
         int noOfRows = 5;
 
-    Map map = MapControl.createMap(noOfRows, noOfColumns);
-        // make sure map was created.
-        if (map == null) {
-            return -1;
-        } else {
-            game.setMap(map);
-            return 1; // indicates success
-        }
-
-          }
+//  //  Map map = MapControl.createMap(noOfRows, noOfColumns);
+//        // make sure map was created.
+//        if (map == null) {
+//            return -1;
+//        } else {
+//            game.setMap(map);
+//            return 1; // indicates success
+//        }
+//
+//          }
+        return 1;
   
+}
 }

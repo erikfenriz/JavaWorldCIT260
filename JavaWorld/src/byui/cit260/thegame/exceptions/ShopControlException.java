@@ -7,7 +7,7 @@ package byui.cit260.thegame.exceptions;
 
 /**
  *
- * @author raysh
+ * @author 
  */
 public class ShopControlException extends Exception{
 
