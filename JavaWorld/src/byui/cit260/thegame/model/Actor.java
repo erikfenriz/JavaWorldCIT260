@@ -19,7 +19,8 @@ public enum Actor {
     Sam("Sam","The youngest boy and faithful brother of Nephi.", new Point(1,2)),
     Laman("Laman","The oldest rebellious brother and leader of Lamanties.", new Point(1,1)),
     Lemuel("Lemuel","The second oldest rebellious brother who went with Laman", new Point(3,4)),
-    Zoram("Zoram","Laban servant that became a faithful follower pf Nephi", new Point(5,2));
+    Zoram("Zoram","Laban servant that became a faithful follower pf Nephi", new Point(5,2)),
+    Player("Player","Lives in the JavaWorld", new Point(1,1));
     
   private String name;
   private String description;
