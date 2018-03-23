@@ -34,6 +34,7 @@ public class MapControl {
     public static Map createMap(int noOfRows, int noOfColumns){
        
         try {
+            if(noOfRows < 0 || noOfColumns < 0)
                 throw new MapControlException("111212121212");
             } catch (MapControlException ex) {
                 Logger.getLogger(MapControl.class.getName()).log(Level.SEVERE, null, ex);
@@ -50,7 +51,7 @@ public class MapControl {
         gameMap.setLocation(locations);
 
         return gameMap;
-    }
+}
 
     
     
