@@ -29,7 +29,7 @@ public class CustomsYesView extends View{
             case '2':     
                 System.out.println("ahaha");
             break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;

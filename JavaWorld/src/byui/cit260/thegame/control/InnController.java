@@ -12,8 +12,8 @@ import byui.cit260.thegame.exceptions.InnControlException;
  * @author Rayshorn Richardson
  */
 public class InnController {
-    /*public double stats = 50.50;
-    public double maxHunger = 300;*/
+    public double stats = 50.50;
+    public double maxHunger = 300;
     
     public static double increaseHunger(double stats, double maxHunger) throws InnControlException{
         double innPoints;

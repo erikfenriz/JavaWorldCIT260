@@ -6,8 +6,16 @@
 package byui.cit260.thegame.view;
 
 import byui.cit260.thegame.control.GameControl;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javaworld.JavaWorld;
+import byui.cit260.thegame.model.Actor;
+import byui.cit260.thegame.model.InventoryItem;
+import byui.cit260.thegame.model.InventoryItem.Item;
+import static java.lang.System.out;
 /**
  *
  * @author Erik Rybalkin & Rayshorn Richardson
@@ -19,8 +27,11 @@ public class MainMenuView extends View{
 
         super("N - Start new game\n" +
               "R - Restart existing game\n" +
+              "P - Print Actors \n" +
+              "G - Print Items \n" + 
               "H - Get help on how to play the game\n" +
               "M - Display Game's Map\n" +  
+              "S - Save Game\n" +
               "E - Exit"
         );
         
@@ -42,10 +53,27 @@ public class MainMenuView extends View{
                 System.out.println("Get Help");
                 getHelp();
             break;
+            case 'S':
+                this.saveGame();
+                break;
             case 'E':
                 QuitGameView.displayQuitGameView();
             case 'M':
+        {
+            try {
                 showMap();
+            } catch (IOException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        break;
+            case 'P':
+                System.out.println("Writing Actors to a file...");
+                printActors();
+                break;
+            case 'G':
+                System.out.println("Writing Items to a file...");
+                printItems();
             case 'Q': 
                 System.out.println("Exit");
             Runtime.getRuntime().exit(0);
@@ -57,7 +85,7 @@ public class MainMenuView extends View{
 
     private static void startNewGame() {
             GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
         try{
             GameControl.createNewGame(JavaWorld.getCurrentPlayer());
         }catch(Throwable te){
@@ -82,7 +110,7 @@ public class MainMenuView extends View{
         helpMenuView.display();
     }
 
-    private void showMap(){
+    private void showMap() throws IOException{
           System.out.println("*You are here---​​           | | Classy Town =======^^^^=^^^Loop Mountain=^^^= = == = = = =Library Garden ++\n" +
 "     ~ || ~                     | |​​​^^^^  ||​^^^                      + + + + + + + +\n" +
 "               ~  ||  ~                     | |​​​   ^^ ^||​^^\n" +
@@ -120,15 +148,62 @@ public class MainMenuView extends View{
                   "\nQ - continue");
     String choice;
     
-    Scanner s = new Scanner(System.in);
-    choice = s.nextLine().trim().toUpperCase();
+    //Scanner s = new Scanner(System.in);
+    choice = this.keyboard.readLine();
+    choice = choice.trim();
     switch(choice){
         case "Q":
             this.display();
         default:
-            System.out.println("Invalid choice");
+            ErrorView.display(this.getClass().getName(), "Invalid Choice");
         }   
         
     }
+
+    private void saveGame() {
+        
+    }
+
+    private void printActors() {
+        
+        try{
+          
+            PrintWriter out = new PrintWriter("actors.txt");
+            
+            out.println("\n\n ENUM");
+            out.printf("%n%-20s%10s%10s", "Actor", "Description", "Position");
+            out.printf("%n%-20s%10s%10s", "-----------", "-----------", "-----------");
+       
+            for(Actor actor: Actor.values()){
+                out.printf("%n%-20s%10s%10s", actor.getName()
+                                            ,actor.getDescription()
+                                             , actor.getCoordinates());
+            }
+            out.close();
+            
+        }catch(IOException e){
+            System.out.println("I/O Error" + e.getMessage());
+        }
+    }
+
+    private void printItems() {
+      try{
+          
+            PrintWriter out = new PrintWriter("items.txt");
+            
+            out.println("\n\n ENUM");
+            out.printf("%n%-20s%10s%10s", "Items", "Description", "                Price");
+            out.printf("%n%-20s%10s%10s", "-----------", "-----------", "          -----------");
+       
+            for(InventoryItem.Item item: InventoryItem.Item.values()){
+                out.printf("%n%-20s%10s%10s", item.getName()
+                                            , item.getDescription()
+                                            , item.getPrice());                                           
+                        }
+            out.close();
+            
+        }catch(IOException e){
+            System.out.println("I/O Error" + e.getMessage());
+        }    }
     
 }

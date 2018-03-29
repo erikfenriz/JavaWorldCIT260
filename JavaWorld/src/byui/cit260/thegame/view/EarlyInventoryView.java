@@ -38,7 +38,7 @@ class EarlyInventoryView extends View{
                 LookThroughTheWindowAfterInventory lookThroughTheWindowAfterInventory = new LookThroughTheWindowAfterInventory();
                 lookThroughTheWindowAfterInventory.display();
             break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;

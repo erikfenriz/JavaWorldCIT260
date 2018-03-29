@@ -27,18 +27,36 @@ public class InventoryItem {
     }
     public enum Item {
     
-    Food("Food", "description"),
-    Microchip("Microchip", "description"),
-    WisdomKeys("Wisdom Keys","description."),
-    GuruPowers("GuruPowers","description.");
+    Food("Food", "Consume to stay alive", "5"),
+    Microchip("Microchip", "Just another piece of metal", "100"),
+    WisdomKeys("Wisdom Keys","Just like wisdom teeth.", "200"),
+    GuruPowers("GuruPowers","Summons Guru powers.", "1000");
     
   private String item;
   private String description;
+  private String price;
 
-    Item(String name, String description){
+    Item(String name, String description, String price){
 this.item = name;
 this.description = description;
+this.price = price;
 
+        }
+
+        public String getItem() {
+            return item;
+        }
+
+        public void setItem(String item) {
+            this.item = item;
+        }
+
+        public String getPrice() {
+            return price;
+        }
+
+        public void setPrice(String price) {
+            this.price = price;
         }
 
         public String getName() {

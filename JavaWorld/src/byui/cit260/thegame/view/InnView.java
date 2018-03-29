@@ -44,7 +44,7 @@ public class InnView extends View{
                 System.out.println("Exiting the Inn");
                 break;
             default:
-                System.out.println("Invalid Choice");
+                ErrorView.display(this.getClass().getName(), "Invalid Choice");
                 break;
         }
         return false;

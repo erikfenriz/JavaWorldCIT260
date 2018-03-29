@@ -6,36 +6,39 @@
 package byui.cit260.thegame.view;
 
 import byui.cit260.thegame.control.GameControl;
-import java.util.Scanner;
 import javaworld.JavaWorld;
 
 /**
  *
  * @author Erik Rybalkin
  */
-public class GameMenuView{
+public class GameMenuView extends View{
     
     
     
-    public static void displayGameMenuView(){
+    public GameMenuView() { 
+        super("Welcome to the JavaWorld\n"
+                + "************************\n"
+                + "Are you ready to start the Journey? Y/N"
+        );
         GameControl.createNewGame(JavaWorld.getCurrentPlayer());
-        System.out.println("Are you ready? Y/N");
-        
-        String choice;
-        Scanner s = new Scanner(System.in);
-        choice = s.nextLine().trim().toUpperCase();
-        
+    }
+
+    @Override
+    public boolean doAction(String value)  {
+        char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
-        case "Y":
+        case 'Y':
             Episode1Scene1View episode1Scene1View = new Episode1Scene1View();
             episode1Scene1View.display();
-        case "N":
+        case 'N':
             MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.display();
             break;
         default:
-            System.out.println("Invalid choice");
+            ErrorView.display(this.getClass().getName(), "Invalid Choice");
         }
+        return false;
     }
 
 }

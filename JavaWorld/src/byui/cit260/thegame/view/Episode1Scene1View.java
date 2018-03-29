@@ -38,7 +38,7 @@ public class Episode1Scene1View extends View{
                 EarlyInventoryView earlyInventoryView = new EarlyInventoryView();
                 earlyInventoryView.display();
             break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;

@@ -55,8 +55,7 @@ public class ShopControl {
         }
     
     public static double buyFood(){
-        Scanner q;
-        q = new Scanner(System.in);
+        Scanner q = new Scanner(System.in);
         
         System.out.println("Enter a quantity: ");
         double quant = q.nextDouble();

@@ -40,7 +40,7 @@ public class FirstArrivalView extends View{
                     shopMenuView.display();
                     break;
                 default:
-                    System.out.println("Invalid Choice");
+                    ErrorView.display(this.getClass().getName(), "Invalid Choice");
                     break;
             }
         return false;

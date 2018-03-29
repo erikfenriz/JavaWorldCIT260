@@ -32,7 +32,7 @@ public class CustomsNoView extends View{
             case '2':      
                System.out.println("Don't hold the queue");
             break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;
