@@ -49,7 +49,7 @@ public class HelpShop extends View{
                 System.out.println("Please, help us!");
                 this.display();
                 break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;    

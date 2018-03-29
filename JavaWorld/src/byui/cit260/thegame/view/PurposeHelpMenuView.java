@@ -31,7 +31,7 @@ public class PurposeHelpMenuView extends View{
                 MainMenuView mainMenuView = new MainMenuView();
                 mainMenuView.display();
                 return true;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;

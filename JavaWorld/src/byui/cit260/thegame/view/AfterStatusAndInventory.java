@@ -27,7 +27,7 @@ char choice = Character.toUpperCase(value.charAt(0));
                 FirstArrivalView firstArrivalView = new FirstArrivalView();
                 firstArrivalView.display();
                 break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;

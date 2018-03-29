@@ -36,7 +36,7 @@ public class ShopMenuView extends View{
                     helpShop.display();
                 break;
                 default:
-                    System.out.println("Invalid Selection");
+                    ErrorView.display(this.getClass().getName(), "Invalid Choice");
                 break;
         }
         return false;

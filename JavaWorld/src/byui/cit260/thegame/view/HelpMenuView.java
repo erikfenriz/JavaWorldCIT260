@@ -35,7 +35,7 @@ public class HelpMenuView extends View{
             MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.display();
             break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;

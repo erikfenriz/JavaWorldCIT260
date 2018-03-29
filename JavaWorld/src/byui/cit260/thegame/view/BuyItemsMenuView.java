@@ -42,7 +42,7 @@ public class BuyItemsMenuView extends View{
                 System.out.println("Exiting Buy Menu");
                 break;
             default:
-                System.out.println("Invalid Choice");
+                ErrorView.display(this.getClass().getName(), "Invalid Choice");
                 buyMenuView();
                 break;
         }

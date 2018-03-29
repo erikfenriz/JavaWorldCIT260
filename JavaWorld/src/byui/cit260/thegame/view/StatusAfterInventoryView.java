@@ -31,7 +31,7 @@ public class StatusAfterInventoryView extends View{
                 AfterStatusAndInventory afterStatusAndInventory = new AfterStatusAndInventory();
                 afterStatusAndInventory.display();
             break;
-            default: System.out.println("Invalid Choice");
+            default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
         }
         return false;

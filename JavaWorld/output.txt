@@ -1,0 +1,15 @@
+
+
+ ENUM
+
+Actor               Description  Position
+-----------         ----------------------
+Lehi                He is the prophet and leader of the family.java.awt.Point[x=1,y=1]
+Seriah              She is Lehi's wife and mother of the family.java.awt.Point[x=0,y=1]
+Nephi               Faithful son and later the prophet leader of the Nephites.java.awt.Point[x=1,y=2]
+Jacob               Nephi's faithful brother prophet and successor to Nephi.java.awt.Point[x=2,y=3]
+Sam                 The youngest boy and faithful brother of Nephi.java.awt.Point[x=1,y=2]
+Laman               The oldest rebellious brother and leader of Lamanties.java.awt.Point[x=1,y=1]
+Lemuel              The second oldest rebellious brother who went with Lamanjava.awt.Point[x=3,y=4]
+Zoram               Laban servant that became a faithful follower pf Nephijava.awt.Point[x=5,y=2]
+Player              Lives in the JavaWorldjava.awt.Point[x=1,y=1]

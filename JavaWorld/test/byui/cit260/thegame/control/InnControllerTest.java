@@ -5,6 +5,7 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.exceptions.InnControlException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,7 +32,7 @@ public class InnControllerTest {
      * Test of increaseHunger method, of class InnController.
      */
     @Test
-    public void testIncreaseHunger() {
+    public void testIncreaseHunger() throws InnControlException {
     
         double stats = 50.0;
         double maxHunger = 300;

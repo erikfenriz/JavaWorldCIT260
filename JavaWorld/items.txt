@@ -1,0 +1,10 @@
+
+
+ ENUM
+
+Items               Description                Price
+-----------         -----------          -----------
+Food                Consume to stay alive         5
+Microchip           Just another piece of metal       100
+Wisdom Keys         Just like wisdom teeth.       200
+GuruPowers          Summons Guru powers.      1000
