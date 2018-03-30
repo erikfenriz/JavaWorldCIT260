@@ -1,0 +1,13 @@
+
+
+ Control Help Menu
+To progress through the game, use the keys that are
+prompted by the game.
+The game is expecting the commands as numbers – 1,2,3,4,5,etc.
+In some cases, the commands that the game expects are “yes”
+and “no” for closed-ended questions.
+Some screens wouldn’t prompt an input.
+These screens are skippable with Space button
+*******************************************************
+P - Print this instruction
+Q - go back
