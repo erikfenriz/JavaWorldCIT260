@@ -8,7 +8,7 @@ package byui.cit260.thegame.model;
 
 /**
  *
- * @author user
+ * @author Erik Rybalkin and Rayshorn Richardson
  */
 public class InventoryItem {
 

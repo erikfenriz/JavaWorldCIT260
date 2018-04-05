@@ -25,5 +25,35 @@ public class GuruPowder extends Item{
         this.requestHelp = requestHelp;
         return true;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 19 * hash + (this.requestHelp ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final GuruPowder other = (GuruPowder) obj;
+        if (this.requestHelp != other.requestHelp) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "GuruPowder{" + "requestHelp=" + requestHelp + '}';
+    }
     
 }

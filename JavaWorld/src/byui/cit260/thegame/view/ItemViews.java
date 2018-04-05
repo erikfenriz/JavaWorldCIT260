@@ -5,6 +5,7 @@
  */
 package byui.cit260.thegame.view;
 
+import byui.cit260.thegame.control.ShopControl;
 import byui.cit260.thegame.model.Item;
 
 /**
@@ -14,16 +15,30 @@ import byui.cit260.thegame.model.Item;
 public class ItemViews extends View{
 
     public Item items;
-    int ID = items.getItemID();
-    int cost = items.getCost();
-    int quantity = items.getQuantityOfItem();
+    public int ID = items.getItemID();
+    public int cost = items.getCost();
+    public int quantity = items.getQuantityOfItem();
+    
     public ItemViews(){
-       System.out.println("Item ID: " + ID + "\nItem cost" + cost + "\nQuantity" + quantity);
+       super("You have bought food");
     }
     
     @Override
     public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        char choice = Character.toUpperCase(value.charAt(0));
+        
+        switch(choice){
+            case 'C':
+                System.out.println("You have bought some Food");
+                ShopControl.buyFood(ID, cost, quantity);
+                break;
+            case 'Q':
+                System.out.println("You have exited the store");
+            default:
+                ErrorView.display(this.getClass().getName(), "Invalid Choice");
+                break;
+        }
+        return false;
     }
-    
+
 }

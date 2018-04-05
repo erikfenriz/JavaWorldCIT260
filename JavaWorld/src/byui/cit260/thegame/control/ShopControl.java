@@ -54,13 +54,14 @@ public class ShopControl {
     
         }
     
-    public static double buyFood(){
+    public static double buyFood(int ID, int cost, int quantity){
         Scanner q = new Scanner(System.in);
         
         System.out.println("Enter a quantity: ");
-        double quant = q.nextDouble();
+        int quant = q.nextInt();
+        quantity += quant;
         //InventoryItem.InventoryControl(quantity);
-        double costOfItem = quant /*\* COST*/;
+        double costOfItem = quantity /*\* COST*/;
         return 1;
     }
 }

@@ -7,7 +7,7 @@ package byui.cit260.thegame.model;
 
 /**
  *
- * @author raysh
+ * @author Rayshorn Richardson
  */
 public class Microchip extends Item{
  

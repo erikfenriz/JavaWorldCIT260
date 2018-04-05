@@ -30,9 +30,8 @@ public class BuyItemsMenuView extends View{
         
         switch(choice){
             case 'F':
-                //System.out.println("You have bought some Food");
-                ShopControl.buyFood();
-                afterShop();
+                System.out.println("You have bought some Food");
+                FoodItemViews();
                 break;
             case 'M':
                 System.out.println("You have bought some Microchips");
@@ -57,5 +56,10 @@ public class BuyItemsMenuView extends View{
     public void afterShop(){
         AfterShopMenuView afterShopMenuView = new AfterShopMenuView();
         afterShopMenuView.display();
+    }
+    
+    public void FoodItemViews(){
+        ItemViews itemview = new ItemViews();
+        itemview.display();
     }
 }
