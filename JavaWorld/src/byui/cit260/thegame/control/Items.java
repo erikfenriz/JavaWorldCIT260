@@ -5,6 +5,7 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.model.InventoryItem;
 import byui.cit260.thegame.model.Item;
 import byui.cit260.thegame.model.KnowledgeCoin;
 import byui.cit260.thegame.model.Shop;
@@ -16,17 +17,33 @@ import byui.cit260.thegame.model.Shop;
 public class Items {
     
     public KnowledgeCoin currentCurrency;
+    public InventoryItem items;
     public Item item;
     public Shop shop;
-    public static double IncreaseCurrency(Item item,Shop shop, KnowledgeCoin currentCurrency) {
+    
+    public static double IncreaseCurrency(Item item,Shop shop, InventoryItem items, KnowledgeCoin currentCurrency) {
         if(shop.isBuy() == false && shop.isSell() == false){
             return 0;
         }
         else if(shop.isBuy() == true && shop.isSell() == false){
-            
+            int itemID = item.getItemID();
+            int cost = currentCurrency.getAmount() - item.getCost();
+            currentCurrency.setAmount(cost);
         }
-
-
+        else if(shop.isBuy() == false && shop.isSell() == true){
+            int itemID = item.getItemID();
+            int cost = currentCurrency.getAmount() + item.getCost();
+            currentCurrency.setAmount(cost);
+        }
+        else if(shop.isBuy() == true && shop.isSell() == false && currentCurrency.getAmount() <= 0){
+            return 0;
+        }
+        else if(shop.isBuy() == false && shop.isSell() == true && item.getCost() <= 0){
+            return 0;
+        }
+        else{
+            return 0;
+        }
         
         return 1;
     }    

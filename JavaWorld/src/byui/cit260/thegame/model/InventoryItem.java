@@ -37,9 +37,9 @@ public class InventoryItem {
   private String price;
 
     Item(String name, String description, String price){
-this.item = name;
-this.description = description;
-this.price = price;
+        this.item = name;
+        this.description = description;
+        this.price = price;
 
         }
 
@@ -51,6 +51,14 @@ this.price = price;
             this.item = item;
         }
 
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
         public String getPrice() {
             return price;
         }
@@ -59,22 +67,10 @@ this.price = price;
             this.price = price;
         }
 
-        public String getName() {
-            return item;
+        @Override
+        public String toString() {
+            return "Item{" + "item=" + item + ", description=" + description + ", price=" + price + '}';
         }
-
-        public void setName(String name) {
-            this.item = name;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-    
-    
+ 
     }
 }
