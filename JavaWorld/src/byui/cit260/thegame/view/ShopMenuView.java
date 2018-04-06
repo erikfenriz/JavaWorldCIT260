@@ -14,7 +14,9 @@ public class ShopMenuView extends View{
      public ShopMenuView() {
 
         super("Hello! Welcome to the Logic Gate Store!\n" 
-                            + "B - Buy\n" + "S - Sell\n" + "H - Excuse me...\n"
+                            + "B - Buy\n" + "S - Sell\n" + "H - Excuse me...\n" 
+                + "G - I am looking for one person"
+                
         );
         
     }
@@ -34,6 +36,10 @@ public class ShopMenuView extends View{
                 case 'H':          
                     HelpShop helpShop = new HelpShop();                    
                     helpShop.display();
+                break;
+                case 'G':
+                    AskAboutGuru ask = new AskAboutGuru();
+                    ask.display();
                 break;
                 default:
                     ErrorView.display(this.getClass().getName(), "Invalid Choice");

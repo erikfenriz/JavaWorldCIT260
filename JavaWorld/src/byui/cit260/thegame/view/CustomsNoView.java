@@ -27,10 +27,13 @@ public class CustomsNoView extends View{
         char choice = Character.toUpperCase(value.charAt(0));
         switch(choice){
             case '1':
-               System.out.println("Don't hold the queue");
+               JavaScriptExplained js = new JavaScriptExplained();
+               js.display();
                 break;
             case '2':      
-               System.out.println("Don't hold the queue");
+               System.out.println("Don't hold the queue. and I love JS anyway...");
+               JavaScriptExplained js2 = new JavaScriptExplained();
+               js2.display();
             break;
             default: ErrorView.display(this.getClass().getName(), "Invalid Choice");
             break;
