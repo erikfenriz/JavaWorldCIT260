@@ -20,6 +20,7 @@ public class ShopControlTest {
 
     /**
      * Test of calcShopDiscount method, of class ShopControl.
+     * @throws byui.cit260.thegame.exceptions.ShopControlException
      */
     @Test
     public void testCalcShopDiscount() throws ShopControlException {
