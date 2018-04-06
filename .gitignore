@@ -39,3 +39,7 @@ source
 ehthumbs.db
 Thumbs.db
 JavaWorld/src/byui/cit260/thegame/model/Actor.java
+*.java
+*.java
+*.java
+JavaWorld/src/byui/cit260/thegame/control/MapControl.java

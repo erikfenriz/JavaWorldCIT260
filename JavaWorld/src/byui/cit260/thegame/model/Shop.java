@@ -15,7 +15,7 @@ public class Shop implements Serializable{
     private boolean buy;
     private boolean sell;
     private Location locations;
-    private ArrayList<Item> items = new ArrayList<Item>();
+    private ArrayList<Item> items = new ArrayList<>();
     private double quantity;
 
     public Shop() {

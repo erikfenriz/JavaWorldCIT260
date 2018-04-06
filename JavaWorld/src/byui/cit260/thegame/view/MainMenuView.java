@@ -8,14 +8,14 @@ package byui.cit260.thegame.view;
 import byui.cit260.thegame.control.GameControl;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javaworld.JavaWorld;
 import byui.cit260.thegame.model.Actor;
 import byui.cit260.thegame.model.InventoryItem;
-import byui.cit260.thegame.model.InventoryItem.Item;
-import static java.lang.System.out;
+//import byui.cit260.thegame.model.InventoryItem.Item;
+//import static java.lang.System.out;
 /**
  *
  * @author Erik Rybalkin & Rayshorn Richardson
@@ -166,10 +166,8 @@ public class MainMenuView extends View{
 
     private void printActors() {
         
-        try{
+        try(PrintWriter out = new PrintWriter("actors.txt")){
           
-            PrintWriter out = new PrintWriter("actors.txt");
-            
             out.println("\n\n ENUM");
             out.printf("%n%-20s%10s%10s", "Actor", "Description", "Position");
             out.printf("%n%-20s%10s%10s", "-----------", "-----------", "-----------");
@@ -187,16 +185,14 @@ public class MainMenuView extends View{
     }
 
     private void printItems() {
-      try{
+      try(PrintWriter out = new PrintWriter("items.txt")){
           
-            PrintWriter out = new PrintWriter("items.txt");
-            
             out.println("\n\n ENUM");
             out.printf("%n%-20s%10s%10s", "Items", "Description", "                Price");
             out.printf("%n%-20s%10s%10s", "-----------", "-----------", "          -----------");
        
             for(InventoryItem.Item item: InventoryItem.Item.values()){
-                out.printf("%n%-20s%10s%10s", item.getName()
+                out.printf("%n%-20s%10s%10s", item.getItem()
                                             , item.getDescription()
                                             , item.getPrice());                                           
                         }

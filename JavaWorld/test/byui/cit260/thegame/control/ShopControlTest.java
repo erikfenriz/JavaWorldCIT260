@@ -5,6 +5,7 @@
  */
 package byui.cit260.thegame.control;
 
+import byui.cit260.thegame.exceptions.ShopControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,9 +20,10 @@ public class ShopControlTest {
 
     /**
      * Test of calcShopDiscount method, of class ShopControl.
+     * @throws byui.cit260.thegame.exceptions.ShopControlException
      */
     @Test
-    public void testCalcShopDiscount() {
+    public void testCalcShopDiscount() throws ShopControlException {
         
         double mood = 95.5;
         int day = 1;
