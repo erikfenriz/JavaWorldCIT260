@@ -204,6 +204,7 @@ public class MainMenuView extends View{
             
         }catch(IOException e){
             System.out.println("I/O Error" + e.getMessage());
-        }    }
+        } 
+    }
     
 }
