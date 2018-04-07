@@ -13,11 +13,6 @@ import byui.cit260.thegame.model.Item;
  * @author Rayshorn Richardson
  */
 public class ItemViews extends View{
-
-    public Item items;
-    public int ID = items.getItemID();
-    public int cost = items.getCost();
-    public int quantity = items.getQuantityOfItem();
     
     public ItemViews(){
        super("You have bought food");
@@ -29,6 +24,10 @@ public class ItemViews extends View{
         
         switch(choice){
             case 'C':
+                Item items = new Item();
+                int ID = items.getItemID();
+                int cost = items.getCost();
+                int quantity = items.getQuantityOfItem();
                 System.out.println("You have bought some Food");
                 ShopControl.buyFood(ID, cost, quantity);
                 break;

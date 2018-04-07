@@ -61,7 +61,8 @@ public class ShopControl {
         int quant = q.nextInt();
         quantity += quant;
         //InventoryItem.InventoryControl(quantity);
-        double costOfItem = quantity /*\* COST*/;
+        double costOfItem = quantity; /*\* COST*/
+        System.out.println("Quantity: " + costOfItem);
         return 1;
     }
 }

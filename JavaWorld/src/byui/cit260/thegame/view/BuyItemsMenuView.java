@@ -48,6 +48,11 @@ public class BuyItemsMenuView extends View{
         return false;
     }
 
+    public void FoodItemViews(){
+        ItemViews itemview = new ItemViews();
+        itemview.display();
+    }
+    
      public void buyMenuView(){
         BuyItemsMenuView buyItemsMenuView = new BuyItemsMenuView();
         buyItemsMenuView.display();
@@ -57,9 +62,5 @@ public class BuyItemsMenuView extends View{
         AfterShopMenuView afterShopMenuView = new AfterShopMenuView();
         afterShopMenuView.display();
     }
-    
-    public void FoodItemViews(){
-        ItemViews itemview = new ItemViews();
-        itemview.display();
-    }
+   
 }
